@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="date-n-time"></p>
+    <p>Please fill-in student detials</p>
+    <form>
+      <ul>
+        <li>
+          <label for="fname">First name:</label>
+          <input type="text" id="fname" name="first_name" />
+        </li>
+        <li>
+          <label for="lname">Last name:</label>
+          <input type="text" id="lname" name="last_name" />
+        </li>
+        <li>
+          <label for="mail">E-mail:</label>
+          <input type="email" id="mail" name="student_email" />
+        </li>
+        <li>
+          <label for="msg">Message:</label>
+          <textarea id="msg" name="student_message"></textarea>
+        </li>
+        <li>
+          <label for="status">Status:</label>
+          <select id="status" name="status" onchange="getUserStatus()">
+            <option value="1" hidden></option>
+            <option value="married">Married</option>
+            <option value="bachelor">Bachelor</option>
+            <option value="divorced">Divorced</option>
+            <option value="widower">Widower</option>
+          </select>
+        </li>
+        <li class="button">
+          <button type="submit">Save</button>
+        </li>
+      </ul>
+    </form>
+    <div>
+      <ul>
+        <li>
+          <button onclick="getStudentFromLocalStorage()">
+            Get from local storage
+          </button>
+        </li>
+      </ul>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
