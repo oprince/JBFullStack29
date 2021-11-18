@@ -18,9 +18,14 @@ window.onload(loadStudents);
 
 const loadStudents = () =>{
 const div = document.createElement("div");
-const name = document.createElement("p");
-const age = document.createElement("p");
-const phone = document.createElement("p");
+const table = document.createElement("table");
+const tr = document.createElement("tr");
+const name = document.createElement("td");
+const address = document.createElement("td");
+const phone = document.createElement("td");
+const bday = document.createElement("td");
+const email = document.createElement("td");
+const gender = document.createElement("td");
 const node;
 
 document.appendChild(div);
@@ -28,15 +33,34 @@ document.appendChild(div);
 node = students.name;
 name.appendChild(node);
 
-node = students.age;
-age.appendChild(node);
+node = students.address;
+address.appendChild(node);
 
 node = students.phone;
 phone.appendChild(node);
 
-div.appendChild(name);
-div.appendChild(age);
-div.appendChild(phone);
+node = students.bday;
+bday.appendChild(node);
+
+node = students.email;
+email.appendChild(node);
+
+node = students.gender;
+gender.appendChild(node);
+
+
+div.appendChild(table);
+students.forEach(()=>{
+table.appendChild(tr);
+
+tr.appendChild(name);
+tr.appendChild(address);
+tr.appendChild(phone);
+tr.appendChild(bday);
+tr.appendChild(email);
+tr.appendChild(gender);
+
+});
 
 }
 
@@ -48,7 +72,7 @@ document.getElementById("send").addEventListener("click", ()=>{
   const email = document.getElementById("email").value;
   const gender = document.getElementById("gender").value;
 
-  newStudent = new Student(name, bday, phone, address, email, gender);
+  const newStudent = new Student(name, bday, phone, address, email, gender);
   students.push(newStudent);
 
   window.localStorage.setItem("students", JSON.stringify(students));
