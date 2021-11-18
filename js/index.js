@@ -1,23 +1,31 @@
-function saveStudent(){
-  let student = {
-      fname: document.getElementById('fname').value,
-      lname: document.getElementById('lname').value,
-      mail: document.getElementById('mail').value,
-      msg: document.getElementById('msg').value,
-      status: document.getElementById("status").value
-  }
-  window.localStorage.setItem("student",JSON.stringify(student)); 
-  alert(`The following studen details were saved successfully:\n ${JSON.stringify(student, undefined, 2 )}`);
-  //alert(`The following studen details were saved successfully:\n ${JSON.stringify(student)}`);
+let students = [];
+
+if(window.localStorage.getItem("students")){
+  students = window.localStorage.getItem(JSON.parse("students"))
 }
 
-function getStudentFromLocalStorage(){
-  let studentStr = window.localStorage.getItem("student");
-  console.log(studentStr);
-  let studentObj = JSON.parse(studentStr);
-  document.getElementById('fname').value = studentObj.fname;
-  document.getElementById('lname').value = studentObj.lname;
-  document.getElementById('mail').value = studentObj.mail;
-  document.getElementById('msg').value = studentObj.msg;
-  document.getElementById("status").value = studentObj.status;
+window.onload(loadStudents);
+
+const loadStudents = () =>{
+  const div = document.createElement("div");
+  const name = document.createElement("p");
+  const age = document.createElement("p");
+  const phone = document.createElement("p");
+  const node;
+  
+  document.appendChild(div);
+
+  node = students.name;
+  name.appendChild(node);
+
+  node = students.age;
+  age.appendChild(node);
+
+  node = students.phone;
+  phone.appendChild(node);
+
+  div.appendChild(name);
+  div.appendChild(age);
+  div.appendChild(phone);
+
 }
