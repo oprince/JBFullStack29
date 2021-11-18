@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/formSample.css">
+    <script type = "text/javascript" src = "./js/index.js"></script>
+    <title>Student details</title>
+  </head>
+  <body>
+    <p>Please fill-in student detials</p>
+    <form onSubmit="return saveStudent()">
+      <ul>
+         <li>
+           <label for="fname">First name:</label>
+           <input type="text" id="fname" name="first_name">
+         </li>
+         <li>
+         <li>
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+               <option value="divorced">divorced</option>
+               <option value="married">married</option>
+               <option value="bachelor">bachelor</option>
+               <option value="widower">widower</option>
+            </select>
+         </li>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="last_name">
+          </li>
+          <li>
+           <label for="mail">E-mail:</label>
+           <input type="email" id="mail" name="student_email">
+         </li>
+         <li>
+           <label for="msg">Message:</label>
+           <textarea id="msg" name="student_message"></textarea>
+         </li>
+         <li class="button">
+            <button type="submit">Save</button>            
+          </li>         
+        </ul>
+    </form>  
+    <div>
+       <ul>
+          <li>
+            <button onclick = "getStudentFromLocalStorage()">Get from local storage</button>
+          </li>
+       </ul>      
+    </div>      
+  </body>
+</html>
