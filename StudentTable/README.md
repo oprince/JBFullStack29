@@ -4,7 +4,7 @@
 Our team is going to implement a Students table UI. Here are the requirements:
 
 - **Yaniv, Or, Vlad:** Colored styled table (Bootstrap) 
-- **Yarden, Netanel, Adir:** Form to add\change a student 
+- **Yarden, Netanel, Tamir:** Form to add\change a student 
 - **Ami, Haim:** Option to delete a student 
 - **Adir, Sabina:** No duplicated students
 - **Daniel, Yuva:** Wrapping page (container for the form and the table)
