@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Students</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" name="name" class="input" />
+      <br />
+      <label for="birthday">Birthday</label>
+      <input type="date" name="birthday" class="input" />
+      <br />
+
+      <label for="phone">Phone</label>
+      <input type="num" name="phone" class="input" />
+      <br />
+
+      <label for="address">Address</label>
+      <input type="text" name="address" class="input" />
+      <br />
+
+      <label for="email">Email</label>
+      <input type="email" name="email" class="input" />
+      <br />
+      <label for="gender">Gender</label>
+      <select name="gender" class="input">
+        <option value="" hidden></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <br />
+      <button type="submit">Add Student</button>
+    </form>
+    <table class="student-table">
+     
+    </table>
+    <script src="./index.js"></script>
+  </body>
+</html>
