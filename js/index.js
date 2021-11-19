@@ -7,62 +7,55 @@ class Student{
       this.email = email;
       this.gender = gender;
   }
+id = 0;
+setId(id){
+this.id = id;
 }
+}
+
 let students = [];
+let id = 0;
 
-if(window.localStorage.getItem("students")){
-students = window.localStorage.getItem(JSON.parse("students"))
-}
+students = JSON.parse(localStorage.getItem("students");
 
-window.onload(loadStudents);
-
-const loadStudents = () =>{
+//Putting the list of students in a table
 const div = document.createElement("div");
 const table = document.createElement("table");
+const thead = document.createElement("thead");
+const th = document.createElement("th");
 const tr = document.createElement("tr");
-const name = document.createElement("td");
-const address = document.createElement("td");
-const phone = document.createElement("td");
-const bday = document.createElement("td");
-const email = document.createElement("td");
-const gender = document.createElement("td");
+const td = document.createElement("td");
 const node;
 
+const editBtn = document.createElement("btn");
+editBtn.className = "editBtn";
+
 document.appendChild(div);
-
-node = students.name;
-name.appendChild(node);
-
-node = students.address;
-address.appendChild(node);
-
-node = students.phone;
-phone.appendChild(node);
-
-node = students.bday;
-bday.appendChild(node);
-
-node = students.email;
-email.appendChild(node);
-
-node = students.gender;
-gender.appendChild(node);
-
-
 div.appendChild(table);
-students.forEach(()=>{
+table.appendChild(thead);
+
+//adding th titles to the table
+for(obj in students){
+node = obj;
+th.appendChild(node);
+thead.appendChild(th);
+}
+
+//getting each student in a row and each info in a td
+students.forEach((student)=>{
+
+for(obj in students){
+node = student.obj;
+td.appendChild(node);
+tr.appendChild(td);
+}
+editBtn.id = student.id;
+td.appendChild(editBtn)
+tr.appendChild(td);
+
 table.appendChild(tr);
 
-tr.appendChild(name);
-tr.appendChild(address);
-tr.appendChild(phone);
-tr.appendChild(bday);
-tr.appendChild(email);
-tr.appendChild(gender);
-
 });
-
-}
 
 document.getElementById("send").addEventListener("click", ()=>{
   const name = document.getElementById("name").value;
@@ -73,6 +66,8 @@ document.getElementById("send").addEventListener("click", ()=>{
   const gender = document.getElementById("gender").value;
 
   const newStudent = new Student(name, bday, phone, address, email, gender);
+  students.setId(id);
+  id++;
   students.push(newStudent);
 
   window.localStorage.setItem("students", JSON.stringify(students));
