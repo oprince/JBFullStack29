@@ -35,7 +35,7 @@ div.appendChild(table);
 table.appendChild(thead);
 
 //adding th titles to the table
-for(obj in students){
+for(obj in students[0]){
 node = obj;
 th.appendChild(node);
 thead.appendChild(th);
@@ -44,7 +44,7 @@ thead.appendChild(th);
 //getting each student in a row and each info in a td
 students.forEach((student)=>{
 
-for(obj in students){
+for(obj in student){
 node = student.obj;
 td.appendChild(node);
 tr.appendChild(td);
@@ -57,6 +57,7 @@ table.appendChild(tr);
 
 });
 
+//creating new student object after sending the form and adding to the local storage
 document.getElementById("send").addEventListener("click", ()=>{
   const name = document.getElementById("name").value;
   const bday = document.getElementById("bday").value;
