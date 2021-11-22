@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="heb">
 
 <head>
   <meta charset="utf-8">
@@ -7,44 +7,45 @@
   <script type="text/javascript" src="formSample.js"></script>
   <title>Student details</title>
 </head>
-<body>
-  <p>Please fill-in student detials</p>
+
+<body dir="rtl">
+  <p>פרטי הסטודנט:</p>
   <form onSubmit="return saveStudent()">
     <ul>
       <li>
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="first_name">
+        <label for="fname" dir="rtl">שם פרטי:</label>
+        <input type="text" id="fname" name="first_name" dir="ltr">
       </li>
       <li>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="last_name">
+        <label for="lname" dir="rtl">שם מפשחה:</label>
+        <input type="text" id="lname" name="last_name" dir="ltr">
       </li>
       <li>
-        <label for="mail">E-mail:</label>
+        <label for="mail" dir="rtl">אימייל:</label>
         <input type="email" id="mail" name="student_email">
       </li>
       <li>
-        <label for="msg">Message:</label>
+        <label for="msg">הודעה:</label>
         <textarea id="msg" name="student_message"></textarea>
       </li>
       <li>
-        <label for="status">Choose a car:</label>
+        <label for="status">בחר:</label>
         <select name="status" id="status">
-          <option value="Married">Married</option>
-          <option value="Bachelor">Bachelor</option>
-          <option value="Divorcee">Divorcee</option>
-          <option value="Widower">Widower</option>
+          <option value="Married">נשוי\ה</option>
+          <option value="Bachelor">רווק\ה</option>
+          <option value="Divorcee">גרוש\ה</option>
+          <option value="Widower">אלמן\ה</option>
         </select>
       </li>
       <li class="button">
-        <button type="submit">Save</button>
+        <button type="submit">שמירה</button>
       </li>
     </ul>
   </form>
   <div>
     <ul>
       <li>
-        <button onclick="getStudentFromLocalStorage()">Get from local storage</button>
+        <button onclick="getStudentFromLocalStorage()">לעבור לבסיס</button>
       </li>
     </ul>
   </div>
