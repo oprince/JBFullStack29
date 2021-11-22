@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="heb">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,39 +7,39 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body dir="rtl">
     <p id="date-n-time"></p>
-    <p>Please fill-in student detials</p>
+    <p>בבקשה מלא את פרטי הסטודנט</p>
     <form>
       <ul>
         <li>
-          <label for="fname">First name:</label>
+          <label for="fname">שם פרטי:</label>
           <input type="text" id="fname" name="first_name" />
         </li>
         <li>
-          <label for="lname">Last name:</label>
+          <label for="lname">שם משפחה:</label>
           <input type="text" id="lname" name="last_name" />
         </li>
         <li>
-          <label for="mail">E-mail:</label>
+          <label for="mail">אי-מיל:</label>
           <input type="email" id="mail" name="student_email" />
         </li>
         <li>
-          <label for="msg">Message:</label>
+          <label for="msg">תוכן הודעה:</label>
           <textarea id="msg" name="student_message"></textarea>
         </li>
         <li>
-          <label for="status">Status:</label>
+          <label for="status">סטטוס:</label>
           <select id="status" name="status" onchange="getUserStatus()">
             <option value="1" hidden></option>
-            <option value="married">Married</option>
-            <option value="bachelor">Bachelor</option>
-            <option value="divorced">Divorced</option>
-            <option value="widower">Widower</option>
+            <option value="married">נשוי</option>
+            <option value="bachelor">רווק</option>
+            <option value="divorced">גרוש</option>
+            <option value="widower">אלמן</option>
           </select>
         </li>
         <li class="button">
-          <button type="submit">Save</button>
+          <button type="submit">שלח</button>
         </li>
       </ul>
     </form>
@@ -47,7 +47,7 @@
       <ul>
         <li>
           <button onclick="getStudentFromLocalStorage()">
-            Get from local storage
+            קבל מידע מאחסון מקומי
           </button>
         </li>
       </ul>
