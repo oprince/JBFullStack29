@@ -11,6 +11,9 @@ id = 0;
 setId(id){
 this.id = id;
 }
+getId(){
+  return this.id;
+}
 }
 
 let students = [];
@@ -21,7 +24,7 @@ students = JSON.parse(localStorage.getItem("students"));
 
 
 
-if(students){
+if(students.length > 0){
 //Putting the list of students in a table
 const div = document.createElement("div");
 const table = document.createElement("table");
@@ -87,7 +90,7 @@ document.body.appendChild(div);
 
     let id = 0;
     if(students.length != 0)
-      id = students[students.length - 1].id + 1;
+      id = students[students.length - 1].getId() + 1;
 
     newStudent.setId(id);
     students.push(newStudent);
