@@ -17,5 +17,4 @@ If education years value is not valid:
 - Change the education years field background color
 
 
-
-
+![image](https://user-images.githubusercontent.com/12232897/142916844-d1ca0cf6-11d8-4cab-adda-ae3c2469ba4a.png)
