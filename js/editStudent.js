@@ -28,8 +28,6 @@
             student.address = address.value;
             student.email = email.value;
             student.gender = gender.value;
-
+            
         }
-
-        console.log(students);
     });

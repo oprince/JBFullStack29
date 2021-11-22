@@ -2,6 +2,7 @@ table{
     border-width: 2px;
     border-style: solid;
     border-color: black;
+    margin: auto;
 }
 
 th{
@@ -19,4 +20,8 @@ td{
 
 .editBtn{
     background-color: yellow;
+}
+
+.deleteBtn{
+    background-color: red;
 }
