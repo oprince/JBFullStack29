@@ -16,3 +16,7 @@ td{
     border-color: black;
     text-align: center;
 }
+
+.editBtn{
+    background-color: yellow;
+}

@@ -30,9 +30,7 @@ let th;
 let tr;
 let td;
 let node;
-
-const editBtn = document.createElement("btn");
-editBtn.className = "editBtn";
+let editBtn;
 
 table.appendChild(thead);
 
@@ -58,7 +56,14 @@ td.appendChild(node);
 tr.appendChild(td);
 }
 
-
+//Edit Button creation, adding a class and changing button text
+editBtn = document.createElement("button");
+editBtn.className = "editBtn";
+editBtn.id = student.id;
+editBtn.innerHTML = "Edit";
+td = document.createElement("td");
+td.appendChild(editBtn);
+tr.appendChild(td);
 table.appendChild(tr);
 
 });
@@ -69,22 +74,31 @@ document.body.appendChild(div);
 }
 
 //creating new student object after sending the form and adding to the local storage
-function Send(){
-  const name = document.getElementById("name").value;
-  const bday = document.getElementById("bday").value;
-  const phone = document.getElementById("phone").value;
-  const address = document.getElementById("address").value;
-  const email = document.getElementById("email").value;
-  const gender = document.getElementById("gender").value;
+  document.getElementById("send").addEventListener("click", ()=>{
+    const name = document.getElementById("name").value;
+    const bday = document.getElementById("bday").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const email = document.getElementById("email").value;
+    const gender = document.getElementById("gender").value;
+  
+    let newStudent = new Student(name, bday, phone, address, email, gender);
+  
+    let id = students[students.length - 1].id + 1;
+    newStudent.setId(id);
+    students.push(newStudent);
+  
+    window.localStorage.setItem("students", JSON.stringify(students));
+    location.reload();
 
-  let newStudent = new Student(name, bday, phone, address, email, gender);
+  });
+  for(let i = 0; i < students.length; i++){
+    document.getElementsByClassName("editBtn")[i].addEventListener("click", (e)=>{
+      window.localStorage.setItem("editId", e.target.id);
+      location.href = 'editStudent.html';
+    });
+  }
 
-  let id = students[students.length - 1].id + 1;
-  newStudent.setId(id);
-  students.push(newStudent);
 
-  window.localStorage.setItem("students", JSON.stringify(students));
-  location.reload();
-};
 
 
