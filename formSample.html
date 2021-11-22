@@ -5,46 +5,49 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="formSample.css">
   <script type="text/javascript" src="formSample.js"></script>
-  <title>Student details</title>
+  <title dir="rtl">פרטי הסטודנטים</title>
+  <style>
+      .a {text-align: center}
+  </style>
 </head>
-<body>
-  <p>Please fill-in student detials</p>
+<body dir="rtl">
+  <p class="a" dir="rtl">מלא את פרטי הסטודנט</p>
   <form onSubmit="return saveStudent()">
     <ul>
       <li>
-        <label for="fname">First name:</label>
+        <label dir="rtl" for="fname">שם פרטי:</label>
         <input type="text" id="fname" name="first_name">
       </li>
       <li>
-        <label for="lname">Last name:</label>
+        <label dir="rtl" for="lname">שם משפחה:</label></label>
         <input type="text" id="lname" name="last_name">
       </li>
       <li>
-        <label for="mail">E-mail:</label>
+        <label dir="rtl" for="mail">אימייל:</label>
         <input type="email" id="mail" name="student_email">
       </li>
       <li>
-        <label for="msg">Message:</label>
+        <label for="msg">הודעה:</label>
         <textarea id="msg" name="student_message"></textarea>
       </li>
       <li>
-        <label for="status">Choose a car:</label>
-        <select name="status" id="status">
-          <option value="Married">Married</option>
-          <option value="Bachelor">Bachelor</option>
-          <option value="Divorcee">Divorcee</option>
-          <option value="Widower">Widower</option>
+        <label  for="status">סטטוס:</label>
+        <select dir="rtl" name="status" id="status">
+          <option value="Married">נשוי</option>
+          <option value="Bachelor">רווק</option>
+          <option value="Divorcee">גרוש</option>
+          <option value="Widower">אלמן</option>
         </select>
       </li>
       <li class="button">
-        <button type="submit">Save</button>
+        <button dir="rtl" type="submit">שמירה</button>
       </li>
     </ul>
   </form>
   <div>
     <ul>
       <li>
-        <button onclick="getStudentFromLocalStorage()">Get from local storage</button>
+        <button dir="rtl" onclick="getStudentFromLocalStorage()">הבא מהאחסון המקומי</button>
       </li>
     </ul>
   </div>
