@@ -1,108 +1,132 @@
-class Student{
-  constructor(name, phone, bday, address, email, gender){
-      this.name = name;
-      this.phone = phone;
-      this.bday = bday;
-      this.address = address;
-      this.email = email;
-      this.gender = gender;
+class Student {
+  constructor(name, phone, bday, address, email, gender) {
+    this.name = name;
+    this.phone = phone;
+    this.bday = bday;
+    this.address = address;
+    this.email = email;
+    this.gender = gender;
   }
-id = 0;
-setId(id){
-this.id = id;
-}
-getId(){
-  return this.id;
-}
+  id = 0;
+  setId(id) {
+    this.id = id;
+  }
+  getId() {
+    return this.id;
+  }
 }
 
 let students = [];
 
 
-if(JSON.parse(localStorage.getItem("students")))
-students = JSON.parse(localStorage.getItem("students"));
+if (JSON.parse(localStorage.getItem("students")))
+  students = JSON.parse(localStorage.getItem("students"));
 
 
 
-if(students.length > 0){
-//Putting the list of students in a table
-const div = document.createElement("div");
-const table = document.createElement("table");
-const thead = document.createElement("thead");
-let th;
-let tr;
-let td;
-let node;
-let editBtn;
+if (students.length > 0) {
+  //Putting the list of students in a table
+  const div = document.createElement("div");
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  let th;
+  let tr;
+  let td;
+  let node;
+  let editBtn;
+  let deleteBtn;
 
-table.appendChild(thead);
+  table.appendChild(thead);
 
-//adding th titles to the table
-for(obj in students[0]){
-node = document.createTextNode(obj);
-th = document.createElement("th");
-th.appendChild(node);
-thead.appendChild(th);
-}
+  //adding th titles to the table
+  for (obj in students[0]) {
+    node = document.createTextNode(obj);
+    th = document.createElement("th");
+    th.appendChild(node);
+    thead.appendChild(th);
+  }
 
-table.appendChild(thead);
+  table.appendChild(thead);
 
-//getting each student in a row and each info in a td
-students.forEach((student)=>{
-  tr = document.createElement("tr");
+  //getting each student in a row and each info in a td
+  students.forEach((student) => {
+    tr = document.createElement("tr");
 
-for(obj in student){
+    for (obj in student) {
 
-node =  document.createTextNode(student[obj]);
-console.log(student[obj]);
-td = document.createElement("td");
-td.appendChild(node);
-tr.appendChild(td);
-}
+      node = document.createTextNode(student[obj]);
+      console.log(student[obj]);
+      td = document.createElement("td");
+      td.appendChild(node);
+      tr.appendChild(td);
+    }
 
-//Edit Button creation, adding a class and changing button text
-editBtn = document.createElement("button");
-editBtn.className = "editBtn";
-editBtn.id = student.id;
-editBtn.innerHTML = "Edit";
-td = document.createElement("td");
-td.appendChild(editBtn);
-tr.appendChild(td);
-table.appendChild(tr);
+    //Edit Button creation, adding a class and changing button text
+    editBtn = document.createElement("button");
+    editBtn.className = "editBtn";
+    editBtn.id = student.id;
+    editBtn.innerHTML = "Edit";
+    td = document.createElement("td");
+    td.appendChild(editBtn);
+    tr.appendChild(td);
 
-});
-div.appendChild(table);
-document.body.appendChild(div);
+    deleteBtn = document.createElement("button");
+    deleteBtn.className = "deleteBtn";
+    deleteBtn.id = student.id;
+    deleteBtn.innerHTML = "Delete";
+    td = document.createElement("td");
+    td.appendChild(deleteBtn);
+    tr.appendChild(td);
+
+
+    table.appendChild(tr);
+
+  });
+  div.appendChild(table);
+  document.body.appendChild(div);
 
 
 }
 
 //creating new student object after sending the form and adding to the local storage
-    document.getElementById("send").addEventListener("click", ()=>{
-    const name = document.getElementById("name").value;
-    const bday = document.getElementById("bday").value;
-    const phone = document.getElementById("phone").value;
-    const address = document.getElementById("address").value;
-    const email = document.getElementById("email").value;
-    const gender = document.getElementById("gender").value;
-  
-    let newStudent = new Student(name, bday, phone, address, email, gender);
+document.getElementById("send").addEventListener("click", () => {
+  const name = document.getElementById("name").value;
+  const bday = document.getElementById("bday").value;
+  const phone = document.getElementById("phone").value;
+  const address = document.getElementById("address").value;
+  const email = document.getElementById("email").value;
+  const gender = document.getElementById("gender").value;
 
-    let id = 0;
-    if(students.length != 0)
-      id = students[students.length - 1].getId() + 1;
+  let newStudent = new Student(name, bday, phone, address, email, gender);
 
-    newStudent.setId(id);
-    students.push(newStudent);
-  
-    window.localStorage.setItem("students", JSON.stringify(students));
-    location.reload();
+  let id = 0;
+  if (students.length != 0)
+    id = students[students.length - 1].id + 1;
 
+  newStudent.setId(id);
+  students.push(newStudent);
+
+  window.localStorage.setItem("students", JSON.stringify(students));
+  location.reload();
+
+});
+
+//Adding Edit Butoons event listener
+for (let i = 0; i < students.length; i++) {
+  document.getElementsByClassName("editBtn")[i].addEventListener("click", (e) => {
+    window.localStorage.setItem("editId", e.target.id);
+    location.href = 'editStudent.html';
   });
+}
 
-  for(let i = 0; i < students.length; i++){
-    document.getElementsByClassName("editBtn")[i].addEventListener("click", (e)=>{
-      window.localStorage.setItem("editId", e.target.id);
-      location.href = 'editStudent.html';
-    });
-  }
+
+for (let i = 0; i < students.length; i++) {
+  document.getElementsByClassName("deleteBtn")[i].addEventListener("click", (e) => {
+    if (students[i].id == e.target.id) {
+      console.log("delete");
+      students.splice(i, 1);
+      window.localStorage.setItem("students", JSON.stringify(students));
+      location.reload()
+    }
+  })
+}
