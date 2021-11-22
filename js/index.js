@@ -1,9 +1,9 @@
 class Student{
-  constructor(name, phone, address, bday, email, gender){
+  constructor(name, phone, bday, address, email, gender){
       this.name = name;
-      this.address = address;
       this.phone = phone;
       this.bday = bday;
+      this.address = address;
       this.email = email;
       this.gender = gender;
   }
@@ -51,6 +51,7 @@ students.forEach((student)=>{
 for(obj in student){
 
 node =  document.createTextNode(student[obj]);
+console.log(student[obj]);
 td = document.createElement("td");
 td.appendChild(node);
 tr.appendChild(td);
@@ -74,7 +75,7 @@ document.body.appendChild(div);
 }
 
 //creating new student object after sending the form and adding to the local storage
-  document.getElementById("send").addEventListener("click", ()=>{
+    document.getElementById("send").addEventListener("click", ()=>{
     const name = document.getElementById("name").value;
     const bday = document.getElementById("bday").value;
     const phone = document.getElementById("phone").value;
@@ -83,8 +84,11 @@ document.body.appendChild(div);
     const gender = document.getElementById("gender").value;
   
     let newStudent = new Student(name, bday, phone, address, email, gender);
-  
-    let id = students[students.length - 1].id + 1;
+
+    let id = 0;
+    if(students.length != 0)
+      id = students[students.length - 1].id + 1;
+
     newStudent.setId(id);
     students.push(newStudent);
   
@@ -92,13 +96,10 @@ document.body.appendChild(div);
     location.reload();
 
   });
+
   for(let i = 0; i < students.length; i++){
     document.getElementsByClassName("editBtn")[i].addEventListener("click", (e)=>{
       window.localStorage.setItem("editId", e.target.id);
       location.href = 'editStudent.html';
     });
   }
-
-
-
-
