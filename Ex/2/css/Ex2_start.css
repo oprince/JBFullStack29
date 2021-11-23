@@ -91,3 +91,6 @@ form {
        between the labels and their text fields */
     margin-left: .5em;
   }
+  body { 
+    background: #afc2e94d; 
+  }
