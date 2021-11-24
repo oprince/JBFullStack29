@@ -2,6 +2,8 @@ const form = document.querySelector("form");
 const educationField = document.getElementById("education");
 const birthdayField = document.getElementById("birthday");
 
+document.addEventListener("DOMContentLoaded", initiateForm);
+
 function saveStudent() {
   let student = {
     fname: document.getElementById("fname").value,
@@ -93,5 +95,3 @@ form.addEventListener("submit", (e) => {
     saveStudent();
   }
 });
-
-form.addEventListener("DOMContentLoaded", initiateForm);
