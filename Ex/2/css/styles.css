@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Rubik:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  font-family: "Rubik", sans-serif;
+}
+
+div {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 450px;
+  /* Form outline */
+  padding: 1em;
+}
+
+div.emsg {
+  color: #c12020;
+  font-weight: bold;
+  padding: 0;
+  height: 1em;
+}
+
+form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 450px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: #000;
+}
+
+input.init {
+  border: 1px solid #0faa3d;
+}
+
+input.empty {
+  background: #afc2e94d;
+}
+
+input.err {
+  background: #ffe6ee;
+  border: 1px solid #b1395f;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px;
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
+  margin-left: 0.5em;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: 0;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+#error-message p {
+  margin-top: 0.7rem;
+  font-size: 13px;
+}
