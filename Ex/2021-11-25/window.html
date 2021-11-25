@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM data types - window</title>
+    </head>
+    <body>
+
+        <h2>window.navigator.userAgent</h2>
+        <p id="navigator"></p>
+
+        <script>
+        document.getElementById("navigator").innerHTML = `${window.navigator.userAgent}`
+        </script>
+
+        <h2>window.location</h2>
+        <p id="location"></p>
+
+        <script>
+        document.getElementById("location").innerHTML = `${window.location}`
+        function changeLocation(){
+            window.location = 'Ex2_solution.html';
+        }
+        </script>
+        <div>
+            <button onclick = "changeLocation()">change location</button>
+        </div>
+
+    </body>
+</html>
