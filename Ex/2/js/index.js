@@ -1,9 +1,11 @@
 const form = document.querySelector("form");
 const educationField = document.getElementById("education");
 const birthdayField = document.getElementById("birthday");
-const requiredFields = document.querySelectorAll("input[required]");
+const requiredFields = Array.from(document.querySelectorAll("input[required]"));
 
 document.addEventListener("DOMContentLoaded", initiateForm);
+
+const getLS = () => JSON.parse(localStorage.getItem("student"));
 
 function saveStudent() {
   let student = {
@@ -79,6 +81,12 @@ function initiateForm() {
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("change", setSubmitButton);
   });
+
+  setLocalStorageBtn();
+}
+
+function setLocalStorageBtn() {
+  document.getElementById("ls-btn").disabled = getLS() ? false : true;
 }
 
 const unixYears = (years) => {
