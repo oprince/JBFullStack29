@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM data types - document</title>
+  </head>
+  <body>
+    <script>
+      let addedIndex = 0;
+      function createMyElement() {
+        addedIndex += 1;
+        let element = document.createElement("div");
+        element.id = "addWithJs-" + addedIndex;
+        element.appendChild(document.createTextNode("Happy to join"));
+        document.getElementById("createElementSample").appendChild(element);
+      }
+    </script>
+
+    <h2>createElement method</h2>
+    <div id="createElementSample">
+      <button onclick="createMyElement()">create element</button>
+    </div>
+
+    <script>
+      function getElements(tagName) {
+        let elements = document.getElementsByTagName(tagName);
+        let elementsString = "";
+        for (let index = 0; index < elements.length; index++) {
+          const element = elements[index];
+          elementsString += element.id;
+          elementsString += "<br>";
+        }
+        document.getElementById("elementsList").innerHTML = elementsString;
+      }
+    </script>
+
+    <h2>get elements method</h2>
+    <div id="getElementSample">
+      <p id="elementsList"></p>
+      <button onclick="getElements('div')">show div elements</button>
+    </div>
+
+    <script>
+      function createHeaderTwo() {
+        let element = document.createElement("h2");
+        element.appendChild(document.createTextNode("I am H2"));
+        document.getElementById("headerSample").appendChild(element);
+      }
+    </script>
+
+    <h2>createHeaderTwo method</h2>
+    <div id="headerSample">
+      <button onclick="createHeaderTwo()">Show h2 Element</button>
+    </div>
+  </body>
+</html>
