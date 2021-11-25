@@ -41,9 +41,12 @@
 
     <script>
       function createHeaderTwo() {
+        addedIndex += 1;
+        let headerSample = document.getElementById("headerSample");
         let element = document.createElement("h2");
-        element.appendChild(document.createTextNode("I am H2"));
-        document.getElementById("headerSample").appendChild(element);
+        element.appendChild(document.createTextNode("I am H2 " + addedIndex));
+        element.id = "headerTwo-" + addedIndex;
+        headerSample.appendChild(element);
       }
     </script>
 
