@@ -10,6 +10,6 @@
 
 Change [document.html](document.html):
 
-Create a button that will show the content of all <h2> elements
+Create a button that will show the content of all `<h2>` elements
 
 
