@@ -1,6 +1,7 @@
 const form = document.querySelector("form");
 const educationField = document.getElementById("education");
 const birthdayField = document.getElementById("birthday");
+const requiredFields = document.querySelectorAll("input[required]");
 
 document.addEventListener("DOMContentLoaded", initiateForm);
 
@@ -59,11 +60,25 @@ function validateEducation() {
   return age - Number(educationField.value) > 5;
 }
 
+function setSubmitButton() {
+  let isValid = true;
+  requiredFields.forEach((requiredField) => {
+    if (!requiredField.value.length) isValid = false;
+  });
+  document.getElementById("submit-btn").disabled = !isValid;
+}
+
 function initiateForm() {
   //Limit maximum birth date to be 18 years ago
   var today = new Date();
   birthdayField.setAttribute("max", minMaxDate(today, 18));
   birthdayField.setAttribute("min", minMaxDate(today, 90));
+
+  document.getElementById("submit-btn").disabled = true;
+  let inputElements = document.querySelectorAll("input");
+  inputElements.forEach((inputElement) => {
+    inputElement.addEventListener("change", setSubmitButton);
+  });
 }
 
 const unixYears = (years) => {
@@ -92,6 +107,6 @@ form.addEventListener("submit", (e) => {
   } else {
     educationField.style.background = "unset";
     document.getElementById("error-message").innerHTML = ``;
-    saveStudent();
+    setTimeout(() => saveStudent(), 300);
   }
 });
