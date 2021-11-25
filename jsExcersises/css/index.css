@@ -1,0 +1,27 @@
+table{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: auto;
+}
+
+th{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+td{
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    text-align: center;
+}
+
+.editBtn{
+    background-color: yellow;
+}
+
+.deleteBtn{
+    background-color: red;
+}
