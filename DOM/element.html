@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM data types - element</title>
+  </head>
+  <body>
+    <div id="wrapperForChildren">
+      <script id="function_getChildrenOf">
+        function getChildrenOf(elementId) {
+          let children = document.getElementById(elementId).children;
+          let elementsString = "";
+          for (let index = 0; index < children.length; index++) {
+            let element = children[index];
+            grandChildren = element.children;
+            console.log("grandChildren.length ", grandChildren.length);
+            for (let index = 0; index < grandChildren.length; index++) {
+              const grandChild = grandChildren[index];
+            }
+            elementsString += `tag: ${element.tagName}, id: ${element.id}<br>`;
+          }
+          document.getElementById("childrenSample").innerHTML = elementsString;
+        }
+      </script>
+
+      <h2 id="h2_children">children</h2>
+      <div id="childrenSampleDiv">
+        <p id="childrenSample"></p>
+        <button onclick="getChildrenOf('wrapperForChildren')" id="button">
+          show children
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
