@@ -12,11 +12,11 @@
           for (let index = 0; index < children.length; index++) {
             let element = children[index];
             grandChildren = element.children;
-            console.log("grandChildren.length ", grandChildren.length);
+            elementsString += `tag: ${element.tagName}, id: ${element.id}<br>`;
             for (let index = 0; index < grandChildren.length; index++) {
               const grandChild = grandChildren[index];
+              elementsString += `tag: ${grandChild.tagName}, id: ${grandChild.id}<br>`;
             }
-            elementsString += `tag: ${element.tagName}, id: ${element.id}<br>`;
           }
           document.getElementById("childrenSample").innerHTML = elementsString;
         }
