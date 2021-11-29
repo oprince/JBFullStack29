@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+$input-bg: #f7f7f7;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: black;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background: #fafafa;
+  background: url("../assets/images/tile.jpg") repeat;
+}
+
+header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  h1 {
+    font-size: 4rem !important;
+    font-weight: bold;
+  }
+}
+
+.container {
+  width: 625px;
+  min-height: 140px;
+  margin: auto;
+}
+
+.form-input {
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-image: url("../assets/images/formbg.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  min-height: 70px;
+  width: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    height: 25px;
+    width: 100%;
+    margin-top: -0.1rem;
+    margin-left: 0.3rem;
+    border: 0;
+    background-color: $input-bg;
+    outline: none;
+    margin-left: 3.2rem;
+  }
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  input {
+    width: unset;
+    flex: 1;
+  }
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+  .btn {
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: unset;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Poppins";
+
+    &:nth-of-type(2) {
+      background-color: rgb(209, 52, 24);
+    }
+  }
+}
+
+.messages {
+  overflow: hidden;
+  .alert {
+    &-danger,
+    &-success {
+      padding: 0.5rem 0.5rem;
+      border-radius: 0.5rem;
+      font-size: 14px;
+      margin: 0.5rem 0 0.2rem !important;
+      animation: fromTop 0.2s ease-in-out;
+    }
+  }
+}
+
+.tasks {
+  padding: 1rem;
+  min-height: 700px;
+  width: 625px;
+  margin: auto;
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 625px;
+    margin: auto;
+  }
+
+  &-card {
+    background-image: url("../assets/images/notebg.png");
+    height: 250px;
+    width: 200px;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+
+    &__content {
+      margin-top: 2rem;
+      padding: 1rem;
+      height: calc(100% - 5rem);
+      width: calc(100% - 2rem);
+      overflow: overlay;
+      overflow-wrap: break-word;
+    }
+
+    &__time-date {
+      display: flex;
+      flex-direction: column;
+      padding: 0rem 1rem;
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    &__remove-btn {
+      opacity: 0;
+      position: absolute;
+      right: 2rem;
+      top: 1.5rem;
+      height: 25px;
+      width: 25px;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.2rem;
+      transition: all 0.2s ease-in-out;
+      outline: none;
+      cursor: pointer;
+      border: none;
+
+      span {
+        color: white;
+      }
+    }
+  }
+}
+
+.active {
+  display: flex !important;
+  opacity: 1;
+}
+
+@keyframes fromTop {
+  0% {
+    transform: translateY(-200%) scale(0.5);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

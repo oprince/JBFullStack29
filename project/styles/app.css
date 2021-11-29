@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: black;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background: #fafafa;
+  background: url("../assets/images/tile.jpg") repeat;
+}
+
+header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+}
+
+header h1 {
+  font-size: 4rem !important;
+  font-weight: bold;
+}
+
+.container {
+  width: 625px;
+  min-height: 140px;
+  margin: auto;
+}
+
+.form-input {
+  margin: 0 auto;
+  padding: 0 2rem;
+  background-image: url("../assets/images/formbg.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  min-height: 70px;
+  width: 600px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-input input {
+  height: 25px;
+  width: 100%;
+  margin-top: -0.1rem;
+  margin-left: 0.3rem;
+  border: 0;
+  background-color: #f7f7f7;
+  outline: none;
+  margin-left: 3.2rem;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.d-flex input {
+  width: unset;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.form-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-buttons .btn {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: unset;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+
+.form-buttons .btn:nth-of-type(2) {
+  background-color: #d13418;
+}
+
+.messages {
+  overflow: hidden;
+}
+
+.messages .alert-danger, .messages .alert-success {
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 14px;
+  margin: 0.5rem 0 0.2rem !important;
+  -webkit-animation: fromTop 0.2s ease-in-out;
+          animation: fromTop 0.2s ease-in-out;
+}
+
+.tasks {
+  padding: 1rem;
+  min-height: 700px;
+  width: 625px;
+  margin: auto;
+}
+
+.tasks-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 625px;
+  margin: auto;
+}
+
+.tasks-card {
+  background-image: url("../assets/images/notebg.png");
+  height: 250px;
+  width: 200px;
+  position: relative;
+  -webkit-animation: fadeIn 0.3s ease-in-out;
+          animation: fadeIn 0.3s ease-in-out;
+}
+
+.tasks-card__content {
+  margin-top: 2rem;
+  padding: 1rem;
+  height: calc(100% - 5rem);
+  width: calc(100% - 2rem);
+  overflow: overlay;
+  overflow-wrap: break-word;
+}
+
+.tasks-card__time-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0rem 1rem;
+}
+
+.tasks-card__time-date span {
+  font-size: 12px;
+}
+
+.tasks-card__remove-btn {
+  opacity: 0;
+  position: absolute;
+  right: 2rem;
+  top: 1.5rem;
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 0.2rem;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.tasks-card__remove-btn span {
+  color: white;
+}
+
+.active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  opacity: 1;
+}
+
+@-webkit-keyframes fromTop {
+  0% {
+    -webkit-transform: translateY(-200%) scale(0.5);
+            transform: translateY(-200%) scale(0.5);
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fromTop {
+  0% {
+    -webkit-transform: translateY(-200%) scale(0.5);
+            transform: translateY(-200%) scale(0.5);
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1);
+            transform: translateY(0) scale(1);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=app.css.map */
