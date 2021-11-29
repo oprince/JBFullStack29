@@ -13,3 +13,8 @@ Change [document.html](document.html):
 Create a button that will show the content of all `<h2>` elements
 
 
+# Excersize 5 2021-11-25
+
+Change [element.html](element.html):
+
+In function getChildrenOf() add the details of all children, not only direct children.
