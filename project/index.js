@@ -75,7 +75,7 @@ const drawTasks = () => {
   tasksList.innerHTML = "";
   tasks.forEach((task) => {
     tasksList.innerHTML += `
-        <div class="tasks-card">
+        <div class="tasks-card col-3">
             <button class="tasks-card__remove-btn hide">
                 <span class="fas fa-times" aria-hidden="true"></span>
             </button>

@@ -138,11 +138,6 @@ header h1 {
 }
 
 .tasks-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 625px;
   margin: auto;
 }
