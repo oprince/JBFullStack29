@@ -27,11 +27,16 @@
     <div class="container">
       <form>
         <div class="form-input">
-          <input type="text" name="task" placeholder="Enter your daily task" />
+          <input
+            type="text"
+            name="task"
+            placeholder="Enter your daily task"
+            required
+          />
         </div>
         <div class="form-input d-flex">
-          <input type="time" name="time" />
-          <input type="date" name="date" />
+          <input type="time" name="time" required />
+          <input type="date" name="date" required />
         </div>
         <div class="messages"></div>
       </form>
