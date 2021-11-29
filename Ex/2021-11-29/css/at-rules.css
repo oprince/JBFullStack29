@@ -1,0 +1,95 @@
+@font-face
+{
+    font-family: kongquest;
+    src: url(../fonts/KongQuest-Regular.otf);
+}
+@font-face
+{
+    font-family: lobster;
+    src: url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+}
+
+h1 {
+    font-family:lobster;
+}
+
+h2 {
+    font-family:kongquest;
+}
+
+.fade-in {
+    background-color: blue;
+    color: white;
+    animation-name: FadeIn;
+    animation-duration: 6s;
+    transition-timing-function: linear;
+    margin-top: 1em;
+    max-width: fit-content;
+    }
+  
+ @keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .sliding {
+    animation-duration: 3s;
+    animation-name: slidein;
+    background-color: palevioletred;
+    transition-timing-function: ease;
+    color: white;    
+    margin-top: 1em;
+    max-width: fit-content;
+  }
+  
+  @keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+      }
+  
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+  }
