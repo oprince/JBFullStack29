@@ -59,14 +59,24 @@ const addTask = () => {
     saveLS("tasks", tasks);
     drawTasks();
     validationMessage("success", "Added new task");
+    resetForm();
   } else {
+    allInputs.forEach((input) => {
+      if (!input.value) {
+        input.style.background = "#ffd5d5";
+      } else {
+        input.style.background = "unset";
+      }
+    });
     validationMessage("error", "Please fill in all fields");
   }
-  resetForm();
 };
 
 const resetForm = () => {
   initiateForm();
+  allInputs.forEach((input) => {
+    input.style.background = "unset";
+  });
   formEl.reset();
 };
 
