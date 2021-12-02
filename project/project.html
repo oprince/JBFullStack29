@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="project.js"></script>
+  
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+
+    <h1>My Task Board</h1>
+    <br>
+    <h1><img src="formbg.jpg" height="140px" width="580px"></h1>
+   
+ 
+
+<form  class="form" >
+    
+    <label for="task">Enter your task:</label><br>
+    <textarea name="task" id="task" cols="25" rows="2" required></textarea><br><br>
+    <label for="lname">date</label>
+    <input type="date" id="date" name="date" required >
+    <label for="time">time</label>
+    <input type="time" id="time" name="time" ><br><br required>
+    <input type="button" onclick="addTask()" value="add task" >
+
+  </form> 
+  <br><br>
+  
+  
+<div id="taskDiv"></div>
+
+
+  
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
