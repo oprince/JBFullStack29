@@ -69,4 +69,38 @@ function initPage(){
 function lightCandle(){
     if (nextCandleIndex < candleDays.length)
         dayCandles[nextCandleIndex].show();
+
+        disableButton()
+       
+        
+
 }
+
+function disableButton(){
+
+  if (nextCandleIndex == candleDays.length)
+
+  {document.getElementById('newCandle').disabled=true;}
+
+
+}
+
+
+
+
+
+
+function eraseCandle(){
+
+
+  let erase=document.getElementsByClassName('container');
+
+  erase.classList.remove("col-lg-1");
+
+
+  }
+
+
+
+
+
