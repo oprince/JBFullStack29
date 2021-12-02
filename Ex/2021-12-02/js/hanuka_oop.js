@@ -43,25 +43,30 @@ class Candle {
 }
 
 class DayCandle extends Candle {
-        constructor(dayIndex) {
-          super();
-          this.dayIndex =  dayIndex;
-        }
-        toString() {
-          return candleDays[this.dayIndex];
-        }
-        show(){
-            let div = super.createDiv();
-            let gridCells = document.querySelectorAll(".col-lg-1");
-            gridCells[nextCandleIndex].appendChild(div);
-            nextCandleIndex++;
-        }
+    static instanceIndex = 0;
+    constructor() {
+        super();
+        this.dayIndex =  DayCandle.instanceIndex;
+        DayCandle.instanceIndex++;
+    }
+    toString() {
+        return candleDays[this.dayIndex];
+    }
+    show(){
+        let div = super.createDiv();
+        div.addEventListener("click", ()=>{
+            console.log("click");
+        });
+        let gridCells = document.querySelectorAll(".col-lg-1");
+        gridCells[nextCandleIndex].appendChild(div);
+        nextCandleIndex++;
+    }
 }
 
 function initPage(){
     //console.log(Candle.description);
     for (var i = 0; i < 8; i++)
-        dayCandles.push(new DayCandle(i));
+        dayCandles.push(new DayCandle());
     let shamash = new Shamash();
     shamash.show();
 }
