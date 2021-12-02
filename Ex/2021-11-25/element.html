@@ -6,24 +6,26 @@
     <body>
         <div id='wrapperForChildren'>
             <script id='function_getChildrenOf'>
-                /* change element*/
+                function showChildren(elementId){
+                    let resultString = getChildrenOf(elementId);
+                    document.getElementById('childrenSample').innerHTML =  resultString;
+                }
                 function getChildrenOf(elementId){
                     let children = document.getElementById(elementId).children;
-                    let elementsString = "";
+                    let elementsString = `tag: ${document.getElementById(elementId).tagName}, id: ${elementId}<br>`;
                     for (let index = 0; index < children.length; index++) {
                         let element = children[index];
-                        grandChildren = element.children;
-                        console.log('grandChildren.length ', grandChildren.length);
-                        elementsString += `tag: ${element.tagName}, id: ${element.id}<br>`;
+                        if (element.id != null && element.id != "")
+                            elementsString += getChildrenOf(element.id);
                     }
-                    document.getElementById('childrenSample').innerHTML =  elementsString;
+                    return elementsString;
                 }
             </script>
        
             <h2 id='h2_children'>children</h2>
             <div id="childrenSampleDiv">
                 <p id="childrenSample"></p>
-                <button onclick = "getChildrenOf('wrapperForChildren')">show children</button>
+                <button onclick = "showChildren('wrapperForChildren')">show children</button>
             </div>    
         </div>
     </body>
