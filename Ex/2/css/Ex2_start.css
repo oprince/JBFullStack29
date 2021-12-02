@@ -1,11 +1,9 @@
 div{
-
+  /* Center the form on the page */
   margin: 0 auto;
   width: 450px;
+  /* Form outline */
   padding: 1em;
-  color: #f0f8f3;
-  font-size: 20px;
-  
 }
 
 div.emsg{
@@ -16,22 +14,19 @@ div.emsg{
 }
 
 form {
-   
+    /* Center the form on the page */
     margin: 0 auto;
     width: 450px;
+    /* Form outline */
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
-    color: #f0f8f3;
-  font-size: 20px;
-  background-color: slategrey;
   }
   
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
-
   }
   
   form li + li {
@@ -39,7 +34,7 @@ form {
   }
   
   label {
-  
+    /* Uniform size & alignment */
     display: inline-block;
     width: 100px;
     text-align: right;
@@ -47,19 +42,21 @@ form {
   
   input,
   textarea {
-    
+    /* To make sure that all text fields have the same font settings
+       By default, textareas have a monospace font */
     font: 1em sans-serif;
   
-    
+    /* Uniform text field size */
     width: 300px;
     box-sizing: border-box;
   
+    /* Match form field borders */
     border: 1px solid #999;
   }
   
   input:focus,
   textarea:focus {
-   
+    /* Additional highlight for focused elements */
     border-color: #000;
   }
 
@@ -77,29 +74,20 @@ form {
   }
 
   textarea {
- 
+    /* Align multiline text fields with their labels */
     vertical-align: top;
   
-   
+    /* Provide space to type some text */
     height: 5em;
   }
   
   .button {
-   
-    padding-left: 90px; 
+    /* Align buttons with the text fields */
+    padding-left: 90px; /* same size as the label elements */
   }
   
   button {
-    
+    /* This extra margin represent roughly the same space as the space
+       between the labels and their text fields */
     margin-left: .5em;
-    
   }
-  body {
-
-    background-repeat: no-repeat; 
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20190826/pngtree-dark-abstract-background-with-dark-overlap-layers-image_304990.jpg);
-    background-attachment: fixed;
-    text-align: center;
-    background-size: cover;
-  }
-  
