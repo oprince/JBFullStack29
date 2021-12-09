@@ -12,3 +12,9 @@ function handleUserInput(){
     let result = JSON.parse(userInput);
     alert("result: " + JSON.stringify(result));
 }
+
+function picerror(){
+    //let imageelement = document.getElementById("errorpic") ;    
+    //imageelement.src=
+    document.getElementById("errorpic").src = "images/imagenotfound.gif"
+}
