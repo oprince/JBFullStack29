@@ -62,11 +62,8 @@ const addTask = () => {
     resetForm();
   } else {
     allInputs.forEach((input) => {
-      if (!input.value) {
-        input.style.background = "#ffd5d5";
-      } else {
-        input.style.background = "unset";
-      }
+      if (!input.value) input.style.background = "#ffd5d5";
+      else input.style.background = "unset";
     });
     validationMessage("error", "Please fill in all fields");
   }
@@ -123,6 +120,13 @@ const drawTasks = () => {
     });
   });
 };
+
+const button = document.querySelectorAll("close-btn");
+tasks.forEach((task, i) => {
+  button[i].addEventListener("click", () => {
+    tasks.splice(i, 1);
+  });
+});
 
 formEl.addEventListener("submit", (ev) => {
   ev.preventDefault();
