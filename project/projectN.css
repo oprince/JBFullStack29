@@ -1,0 +1,128 @@
+body {
+  background-image: url("tile.jpg");
+}
+
+h1 img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  font-size: 80px;
+}
+
+input,
+label {
+  font-family: "Lobster", cursive;
+  font-size: 15px;
+}
+
+form {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.task_Id {
+  float: left;
+  padding-top: 22px;
+  padding-right: 22px;
+  padding-bottom: 30px;
+  padding-left: 5px;
+  background-image: url(notebg.png);
+  width: 190px;
+  height: 220px;
+  margin-left: 4px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transition: 3s;
+  opacity: 1;
+  text-align: justify;
+  overflow: auto;
+  word-break: break-all;
+  overflow-y: auto;
+}
+
+div.new_Task:active {
+  transition: height 4s;
+  opacity: 0.2;
+}
+
+div.new_Task {
+  height: 20px;
+  padding-top: 22px;
+  padding-right: 22px;
+  padding-bottom: 30px;
+  padding-left: 17px;
+  text-align: center;
+  word-break: break-all;
+  width: 150px;
+  padding: 15px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+p {
+  top: 80%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 0;
+}
+
+#delButton {
+  opacity: 0.02;
+}
+
+#delButton:hover {
+  opacity: 1;
+}
+
+#delButton {
+  left: 190px;
+  top: -40px;
+  position: sticky;
+}
+
+#content {
+  text-align: left;
+  padding-right: 10px;
+  width: 150px;
+  height: 110px;
+  padding-top: 1px;
+  position: absolute;
+  overflow: auto;
+  word-break: break-all;
+  overflow-y: auto;
+  padding: 5px;
+  margin-top: 15px;
+  margin-right: 5px;
+  margin-left: -10px;
+}
+
+#textarea {
+  display: inline-block;
+  word-spacing: 0px;
+}
+
+.task_Id- {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
