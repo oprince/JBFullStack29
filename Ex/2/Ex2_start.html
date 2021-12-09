@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Ex2_start.css">
+    <script type = "text/javascript" src = "./js/Ex2_start.js"></script>
+    <title>Student details</title>
+  </head>
+  <body dir="rtl" onload="initiateForm()">
+    <div>
+      <p>פרטי סטודנט</p>
+    </div>    
+    <form onSubmit="return saveStudent()">
+      <ul>
+         <li>
+           <label for="fname">שם פרטי:</label>
+           <input type="text" id="fname" name="first_name" required>
+         </li>
+         <li>
+            <label for="lname">שם משפחה:</label>
+            <input type="text" id="lname" name="last_name" required>
+          </li>
+          <li>
+           <label for="mail">Email:</label>
+           <input type="email" id="mail" name="student_email" required>
+         </li>
+         <li>
+           <label for="msg">הודעה:</label>
+           <textarea id="msg" name="student_message"></textarea>
+         </li>
+         <li class="button">
+            <button type="submit">שמור</button>            
+          </li>         
+        </ul>
+    </form>  
+    <div>
+       <ul>
+          <li>
+            <button onclick = "getStudentFromLocalStorage()">איחזור</button>
+          </li>
+       </ul>      
+    </div>      
+  </body>
+</html>

@@ -14,6 +14,7 @@ function saveStudent() {
       2
     )}`
   );
+  //GitHub
   //alert(`The following studen details were saved successfully:\n ${JSON.stringify(student)}`);
 }
 
