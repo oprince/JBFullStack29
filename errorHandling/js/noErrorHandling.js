@@ -20,6 +20,6 @@ function handleUserInput(){
 let images = document.getElementsByTagName("img");
 for(let i = 0; i < images.length; i++){
     images[i].addEventListener("error", (e)=>{
-        images[i].src ="images/imageNotFound.png";
+        e.target.src ="images/imageNotFound.png";
     })
 }
