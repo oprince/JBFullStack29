@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body onload="initPage()">
+    <h1>JavaScript Errors handling</h1>
+    <br />
+    <ul>
+      <li>
+        <button id="undefinedFunction" onclick="undefinedFunction()">
+          Call undefined function
+        </button>
+      </li>
+      <li>
+        <!--  past argument was 123 -->
+        <button id="wrongInput" onclick="wrongArgument(123)">
+          Call a function with wrong argument
+        </button>
+      </li>
+      <li>
+        <label for="userInput">User Input:</label>
+        <input type="text" id="userInput" />
+      </li>
+      <li>
+        <button id="handleUserInput" onclick="handleUserInput()">
+          Handle user input
+        </button>
+        <p id="user-input"></p>
+      </li>
+      <li>
+        <img class="image-1" src="imagefound.gif" />
+      </li>
+      <li>
+        <img class="image-2" src="https://picsum.photos/355/355" />
+      </li>
+      <li>
+        <p id="status"></p>
+      </li>
+    </ul>
+    <script src="js/errorHandling.js"></script>
+  </body>
+</html>
