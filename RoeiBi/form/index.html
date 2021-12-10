@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Student details</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="formDIV">
+      <p>Please fill-in student detials</p>
+      <form>
+        <ul>
+          <li>
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="first_name">
+          </li>
+          <li>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="last_name">
+          </li>
+          <li>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="student_email">
+          </li>
+          <li>
+            <label for="sstatus">Status:</label>
+            <select name="sstatus" id="sstatus">
+              <option value="married">Married</option>
+              <option value="bachelor">Bachelor</option>
+            </select>
+          </li>
+          <li class="button">
+            <button type="button" onclick="saveBtn()">Save</button>
+          </li>
+          <li>
+            <button onclick="clearStudents()">Clear LS</button>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="studentsTable">
+      <table id="sTable" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

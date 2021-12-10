@@ -1,0 +1,18 @@
+.container {
+    margin: 0 auto;
+    width: 800px;
+}
+label {
+    width: 80px;
+    display: inline-block;
+}
+input {
+    padding: 2px;
+}
+textarea {
+    max-width: 170px;
+    max-height:160px;
+}
+ul li {
+    margin-top: 10px;
+}
