@@ -37,8 +37,8 @@ function drawTaskCard() {
             <button class="remove-btn">
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
-            <div>${task.name}</div>
-            <p>${task.time} ${task.date}</p>
+            <div id=content>${task.name}</div>
+            <p>${task.date}<br> ${task.time}</p>
         </div>
         `;
   });
@@ -62,5 +62,5 @@ form.addEventListener("submit", (e) => {
 });
 
 function resetForm() {
-  document.getElementById("form").reset();
+  document.querySelector(".form").reset();
 }

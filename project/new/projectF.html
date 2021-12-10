@@ -30,8 +30,16 @@
     <input type="date" id="date" name="date" required >
     <label for="time">time</label>
     <input type="time" id="time" name="time" ><br><br required>
-    <input type="submit"  value="add task" >
+    
+      <button type="submit" class="btn btn-default btn-sm" id="button">
+        Add   <span class="glyphicon glyphicon-pencil"></span>
+      </button>
 
+      <button type="button" onclick="resetForm()" class="btn btn-default btn-sm" id="button">
+      Clear <span class="glyphicon glyphicon-repeat"></span>
+    </button>
+    
+    
   </form> 
   <br><br>
   

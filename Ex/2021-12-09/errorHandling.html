@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/noErrorHandling.js"></script>
   </head>
   <body onload="initPage()">
-  <h1>JavaScript Errors handling</h1>
-  <br>
+    <h1>JavaScript Errors handling</h1>
+    <br />
     <ul>
       <li>
-        <button id="undefinedFunction" onclick="undefinedFunction()">Call undefined function</button>
+        <button id="undefinedFunction" onclick="undefinedFunction()">
+          Call undefined function
+        </button>
       </li>
       <li>
-        <button id="wrongInput" onclick="wrongArgument('123')">Call a function with wrong argument</button>
+        <button id="wrongInput" onclick="wrongArgument(23)">
+          Call a function with wrong argument
+        </button>
       </li>
       <li>
         <label for="userInput">User Input:</label>
-        <input type="text" id="userInput">        
-      </li>  
+        <input type="text" id="userInput" />
+      </li>
       <li>
-        <button id="handleUserInput" onclick="handleUserInput()">Handle user input</button>
-      </li>    
+        <button id="handleUserInput" onclick="handleUserInput()">
+          Handle user input
+        </button>
+      </li>
       <li>
-        <img src="imagefound.gif" onerror="this.onerror=null;this.src='images/imagenotfound.gif';" />
+        <img
+          src="imagefound.gif"
+          onerror="this.onerror=null;this.src='images/imagenotfound.gif';"
+        />
       </li>
       <li>
         <p id="status"></p>
