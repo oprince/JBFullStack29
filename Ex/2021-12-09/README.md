@@ -11,8 +11,8 @@ Practice element event handler:
 
 Practice try-catch:
 
-- Generate and catch ReferenceError in function wrongArgument()
-- Show valid result or error in "status" element using the finally code block
-- Implement the same error handler for handleUserInput(), do not duplicate code !!!
-- Change error handling technique in wrongArgument() method to use case statement. Use typeof() to check argument type. If argument type is a number, throw a custom error.
-- Test the new wrongArgument() method with String, and with Number argument. 
+- Generate and catch `ReferenceError` in function `wrongArgument()`
+- Show valid result or error in `status` element using the `finally` code block
+- Implement the same error handler for `handleUserInput()`, do not duplicate code !!!
+- Change error handling technique in `wrongArgument()` method to use case statement. Use `typeof()` to check argument type. If argument type is a number, throw a custom error.
+- Test the new `wrongArgument()` method with String, and Number arguments. 
