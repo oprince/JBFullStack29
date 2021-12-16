@@ -5,18 +5,20 @@
 }
 h1 {
     font-family:trashim;
-    font-size: 500%;
+    font-size: 300%;
     /* Center */
     margin: 0 auto;
     padding: 1em;
     max-width: fit-content;
     color: gold;   
+  
 }
 a {
   color: rgba(0, 238, 255, 0.541);
 }
 body  {
     background-color: rgb(71, 54, 179);
+   
 }
 
 .candle {
@@ -46,11 +48,13 @@ body  {
 .shamash{
   background-position: right top;
   padding-left: 4em;
+left: 110%;
 }
 .shamash p{
   left: 52%;
   font-size: 150%;
   color:mediumvioletred;
+ 
 }
 .fade-in {
     animation-name: FadeIn;
@@ -112,4 +116,7 @@ body  {
     padding: 1em;
     max-width: fit-content;
     color: gold;  
+  }
+  .shamash{
+    top: -50%;
   }
