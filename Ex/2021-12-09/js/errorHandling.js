@@ -1,13 +1,13 @@
 
-function initPage(){
+function initPage() {
     console.log("initPage");
-//    window.addEventListener('error', (event) => {
-//        let errorMessage = `${event.type}: ${event.message}\n`;
-//        console.error(errorMessage);
-//        event.preventDefault();
-//    });   
+    //    window.addEventListener('error', (event) => {
+    //        let errorMessage = `${event.type}: ${event.message}\n`;
+    //        console.error(errorMessage);
+    //        event.preventDefault();
+    //    });   
 }
-function handleImageError(event){
+function handleImageError(event) {
     console.log(event);
     //this.onerror=null;this.src='images/imagenotfound.gif';
 }
@@ -24,27 +24,43 @@ function handleImageError(event){
 //         'Column: ' + columnNo,
 //         'Error object: ' + JSON.stringify(error)
 //       ].join(' - ');
-  
+
 //       alert(message);
 //     }
-  
+
 //     //returning true prevents the firing of the default event handler 
 //     return false;  
 // };
 
-function wrongArgument(param1){
-    try{
+function wrongArgument(param1) {
+    const p = document.getElementById("status")
+    let finallyResult;
+    console.log(finallyResult);
+
+    try {
         let result = param1.toLowerCase()
-        console.log(result);    
-    }catch(error){
+        finallyResult = result
+        console.log(result);
+    } catch (error) {
+        finallyResult = error
         console.log(error);
-    }finally{
-        //TODO: Show result or error in "status" element
+    } finally {
+        p.innerHTML = finallyResult
     }
 }
 
-function handleUserInput(){
+function handleUserInput() {
     let userInput = document.getElementById("userInput").value;
-    let result = JSON.parse(userInput);
-    alert("result: " + JSON.stringify(result));
+    let finallyResult;
+    try {
+        let result = JSON.parse(userInput);
+        finallyResult = result
+    } catch (error) {
+        finallyResult = error
+
+    }
+    alert("result: " + JSON.stringify(finallyResult));
+
 }
+
+

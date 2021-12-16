@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/noErrorHandling.js"></script>
+    <script src="js/errorHandling.js"></script>
   </head>
   <body onload="initPage()">
   <h1>JavaScript Errors handling</h1>
@@ -13,7 +13,7 @@
         <button id="undefinedFunction" onclick="undefinedFunction()">Call undefined function</button>
       </li>
       <li>
-        <button id="wrongInput" onclick="wrongArgument('123')">Call a function with wrong argument</button>
+        <button id="wrongInput" onclick="wrongArgument(123)">Call a function with wrong argument</button>
       </li>
       <li>
         <label for="userInput">User Input:</label>
