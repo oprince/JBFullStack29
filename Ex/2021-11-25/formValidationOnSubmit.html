@@ -1,62 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="css/Ex2_solution.css">
-    <script type = "text/javascript" src = "js/formValidationOnSubmit.js"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/Ex2_solution.css" />
+    <script type="text/javascript" src="js/formValidationOnSubmit.js"></script>
     <title>Student details</title>
   </head>
   <body dir="rtl" onload="initiateForm()">
     <div>
-      <p>פרטי סטודנט</p>
-    </div>    
+      <p>בדיקת חבילה</p>
+    </div>
     <form onSubmit="return saveStudent()">
-      <ul>
-         <li>
-           <label for="fname">שם פרטי:</label>
-           <input type="text" id="fname" name="first_name" required>
-           <div id="fname_err" class="emsg"></div>
-         </li>
-         <li>
-            <label for="lname">שם משפחה:</label>
-            <input type="text" id="lname" name="last_name" required>
-            <div id="lname_err" class="emsg"></div>
-          </li>
-          <li>
-            <label for="birthDate">תאריך לידה:</label>
-            <input type="date" id="birthDate" name="birthDate" required>
-            <div id="birth_err" class="emsg"></div>
-          </li>
-          <li>
-            <label for="education">שנות לימוד:</label>
-            <input type="number" min=0 id="education" onfocusin="cleanEducationError()" name="education" required>
-            <div id="education_err" class="emsg"></div>
-          </li>          
-          <li>
-            <label for="kids">מספר ילדים:</label>
-            <input type="number" id="kids" name="kids">
-            <div id="kids_err" class="emsg"></div>
-          </li>
-          <li>
-           <label for="mail">Email:</label>
-           <input type="email" id="mail" name="student_email" required>
-           <div id="email_err" class="emsg"></div>
-         </li>
-         <li>
-           <label for="msg">הודעה:</label>
-           <textarea id="msg" name="student_message"></textarea>
-         </li>
-         <li class="button">
-            <button type="submit" id="submitForm">שמור</button>            
-          </li>         
-        </ul>
-    </form>  
+      <label>דקות:</label>
+      <input type="number" /><br /><br />
+      <label>sms:</label>
+      <input type="number" /><br /><br />
+      <label>giga:</label>
+      <input type="number" />
+    </form>
     <div>
-       <ul>
-          <li>
-            <button onclick = "getStudentFromLocalStorage()">איחזור</button>
-          </li>
-       </ul>      
-    </div>      
+      <ul>
+        <li>
+          <button onclick="getStudentFromLocalStorage()">איחזור</button>
+          <button type="button">חשב</button>
+        </li>
+      </ul>
+    </div>
+    <div id="packages">
+      <div id="A">א</div>
+      <div id="B">ב</div>
+      <div id="C">ג</div>
+    </div>
   </body>
 </html>

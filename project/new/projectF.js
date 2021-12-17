@@ -38,7 +38,7 @@ function drawTaskCard() {
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
             <div id=content>${task.name}</div>
-            <p>${task.date}<br> ${task.time}</p>
+            <p>${task.date}<br> [${task.time}</p>
         </div>
         `;
   });

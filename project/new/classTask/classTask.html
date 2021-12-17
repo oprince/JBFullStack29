@@ -1,0 +1,47 @@
+<html lang="he" dir="rtl">
+<head>
+  <title>Amigo Mobile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="classTask.css">
+<body>
+
+<div class="container-fluid" >
+  <h1>בדיקת חבילה</h1>
+ 
+
+  <form class="form" onchange="inputCheck()">
+
+    <label for="mints">דקות שיחה:</label>
+    <input type="number" id="mints" name="mints" ><br><br>
+
+    <label for="giga">כמות ג'יגה:</label>
+    <input type="number" id="giga" name="giga"><br><br>
+
+    <label for="sms">SMS:</label>
+    <input type="number" id="sms" name="sms"><br><br>
+
+  <div class="packages">
+    <div class="package1" id="package1">חבילה א</div>
+    <div class="package2" id="package2">חבילה ב</div>
+    <div class="package3" id="package3">חבילה ג</div>
+  </div>
+
+  
+  <input type="button" value="חשב" onclick="calculate()">
+  <input type="button" value="נקה טופס" onclick="resetForm()" disabled id="clearBtn">
+  </form> 
+
+
+
+
+
+  
+
+
+
+
+</div>
+<script src="classTask.js"></script>
+</body>
+</html>

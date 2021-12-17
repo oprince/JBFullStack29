@@ -46,7 +46,11 @@ function dixT(param1) {
 }
 
 function handleUserInput() {
-  let userInput = document.getElementById("userInput").value;
-  let result = JSON.parse(userInput);
-  alert("result: " + JSON.stringify(result));
+  try {
+    let userInput = document.getElementById("userInput").value;
+    let result = JSON.parse(userInput);
+    alert("result: " + JSON.stringify(result));
+  } catch (error) {
+    console.log("its an errodr");
+  }
 }
