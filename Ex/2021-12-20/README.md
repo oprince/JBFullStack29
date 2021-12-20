@@ -4,7 +4,7 @@
 
 Test mouse events order:
 
-- Attach event handler to the mouse events listed earlier.
+- Attach event handler for the following mouse events :
   - mousedown / mouseup 
   - mouseover / mouseout
   - mousemove
