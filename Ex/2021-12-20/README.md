@@ -18,7 +18,7 @@ Test mouse events order:
 
 Draw on canvas with mouse:
 
-Change the initial code sample to use the following classes:
+Change the [initial code sample](canvas_draw_with_mouse.html) to use the following classes:
 - Line – base class with empty draw() method. Subclasses will implement draw() method, and encapsulate their specific fields:
   - Straight
   - Arc
