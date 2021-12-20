@@ -36,6 +36,15 @@ Advanced:
 - Add “radial gradient” button that will paint the canvas with radial gradient at the middle of canvas – from inner red to middle green to outer blue. 
 - Add input field were the radial gradiant inner and outer radius is entered by user
 
+# Ex 5: draw with mouse
+
+Add `click` event handler to the canvas.
+- When user clicks on the Canvas, draw a small rectangle `(width: 10, height: 10)`. 
+- The rectangle coordinates `(x,y)` should be set according to the mouse position, as follows:
+
+`x = event.clientX - canvas.offsetLeft`
+`y = event.clientY - canvas.offsetTop`
+
 
 # Exercise 7 (Advanced):
 
