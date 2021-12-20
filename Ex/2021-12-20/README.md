@@ -14,6 +14,26 @@ Test mouse events order:
 - Learn the events order by printing them to the console.
 - Add an HTML element that will show (x,y) coordinates of a point which user clicks on the canvas
 
+# Ex 4: draw shapes
+
+Draw rectangle on canvas:
+
+Change the fillBackground() method to paint all canvas area in yellow.
+
+- Add a button that will draw rectangle outlines one inside another, as shown in this sample:
+  - Use a loop that will calculate the rectangle coordinates, size, and color. 
+  - The color options should be represented in an array.
+  - Represent the rectangle to be painted using an object.
+  - Pass the rectangle object to drawRectangle() function
+  - Add input field were number of rectangles should be entered by the user.
+
+Advanced: 
+
+- Add “linear gradient” button that will paint the canvas with linear gradient – from left red to middle green, and right blue.
+- Add “radial gradient” button that will paint the canvas with radial gradient at the middle of canvas – from inner red to middle green to outer blue. 
+- Add input field were the radial gradiant inner and outer radius is entered by user
+
+
 # Exercise 7 (Advanced):
 
 Draw on canvas with mouse:
