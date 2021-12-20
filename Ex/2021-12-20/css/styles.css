@@ -1,0 +1,38 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  margin-left: 5em;
+}
+.mouseTests {
+  border-color: blue;
+  background-color: cornsilk;
+  height: 10em;
+  width: 30em;
+}
+canvas {
+  /*width: 98%;
+  height: 85%;*/
+  border: 1px solid #000000;
+}
+div {
+  margin-top: 10px;
+}
+
+#showCoordinates {
+  width: 500px;
+  height: 500px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgba(0, 0, 0, 0.199);
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 1rem;
+}
