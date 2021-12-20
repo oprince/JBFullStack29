@@ -18,7 +18,7 @@ Test mouse events order:
 
 Draw rectangle on canvas:
 
-Change the fillBackground() method to paint all canvas area in yellow.
+Change the fillBackground() method at the [sample we have reviewed](canvas_draw_shapes.html) to paint all canvas area in yellow.
 
 - Add a button that will draw rectangle outlines one inside another, as shown in this sample:
   - Use a loop that will calculate the rectangle coordinates, size, and color. 
