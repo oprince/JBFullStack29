@@ -26,6 +26,8 @@ Change the fillBackground() method to paint all canvas area in yellow.
   - Represent the rectangle to be painted using an object.
   - Pass the rectangle object to drawRectangle() function
   - Add input field were number of rectangles should be entered by the user.
+  
+  
 ![image](https://user-images.githubusercontent.com/12232897/146805665-ec904b2e-e0e0-4f41-adab-22304287f975.png)
 
 Advanced: 
