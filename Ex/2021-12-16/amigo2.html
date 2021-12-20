@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/amigo.css" />
+    <script type="text/javascript" src="js/amigo3.js"></script>
+    <title>Amigo package calculator</title>
+  </head>
+  <body dir="rtl" onload="initiateForm()">
+    <div>
+      <h1>בדיקת חבילה</h1>
+    </div>
+    <form>
+      <ul>
+        <li>
+          <label for="minutes">דקות</label>
+          <input type="number" id="minutes" required />
+          <div id="fname_err" class="emsg"></div>
+        </li>
+        <li>
+          <label for="giga">ג'יגה</label>
+          <input type="number" id="giga" required />
+          <div id="lname_err" class="emsg"></div>
+        </li>
+        <li>
+          <label for="sms">sms</label>
+          <input type="number" id="sms" required />
+        </li>
+        <li>
+          <div id="form_err" class="emsg"></div>
+        </li>
+        <li class="button">
+          <button type="submit" id="submitForm">חשב</button>
+          <button id="cleanForm">נקה טופס</button>
+          <button type="button" onclick=" theBestPac()">best package</button>
+        </li>
+      </ul>
+    </form>
+    <div>
+      <ul>
+        <div id="packageA" class="greyPackage">חבילה א</div>
+        <div id="packageB" class="greyPackage">חבילה ב</div>
+        <div id="packageC" class="greyPackage">חבילה ג</div>
+      </ul>
+    </div>
+  </body>
+</html>
