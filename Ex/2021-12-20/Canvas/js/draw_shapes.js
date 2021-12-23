@@ -39,7 +39,7 @@ function drawCircle() {
 }
 
 function drawRectangle() {
-  let colors = ["#472FC2", "yellow", "#472FC2", "yellow", "#472FC2", "yellow"];
+  let colors = ["#472FC2", "yellow"];
   const rectProps = {
     x: 20,
     y: 10,
@@ -64,20 +64,24 @@ function drawRectangle() {
 }
 
 function drawWithMouseOnClick() {
-  let x = 0;
-  let y = 0;
-  width = 10;
-  height = 10;
-  let color = "red";
   let canvas = document.getElementById("myCanvas");
   let ctx = canvas.getContext("2d");
+  let rect = {
+    x: 0,
+    y: 0,
+    width: 10,
+    height: 10,
+    color: "red",
+  };
   ctx.lineWidth = 2.5;
-  ctx.strokeStyle = color;
+  let colors = ["#472FC2", "yellow", "purple", "red", "green", "blue"];
   canvas.addEventListener("click", function (event) {
-    x = event.clientX - 5 - canvas.offsetLeft;
-    y = event.clientY - 5 - canvas.offsetTop;
-    ctx.fillRect(x, y, width, height);
-    ctx.strokeRect(x, y, width, height);
+    rect.x = event.clientX - 5 - canvas.offsetLeft;
+    rect.y = event.clientY - 5 - canvas.offsetTop;
+    // ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+    ctx.strokeRect(rect.x, rect.y, rect.width, rect.height);
+    let currentColor = colors[Math.floor(Math.random() * colors.length)];
+    ctx.strokeStyle = currentColor;
   });
 }
 
