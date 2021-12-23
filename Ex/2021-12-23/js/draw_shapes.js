@@ -2,7 +2,7 @@ let canvas;
 let ctx;
 let colors = ["#C418E8", "#E84B18", "#18E823"];
 let colorIndex = 0;
-
+//Olga
 function initPage(){
     console.log("initPage");
     canvas = document.getElementById("myCanvas");
