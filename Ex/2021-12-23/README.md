@@ -1,8 +1,6 @@
 # JBFullStack29
 
-# Ex 6: mouse events
-
-Draw lines on canvas:
+# Ex 6: Draw lines
 
 - Add “draw colored bars” button that will paint the following on the canvas
 - Use a loop that will calculate the bar coordinates, direction (vertical or horizontal) and color. 
