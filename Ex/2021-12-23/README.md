@@ -14,7 +14,7 @@
 
 **Advanced:** Add “rotate colored bars” button that will draw a 45° rotated version of the above image
 
-# Ex 6: Draw on mouse click
+# Ex 7: Draw on mouse click
 
 Change the [solution of Exercise 5](canvas_draw_shapes.html) (prior class) to draw both rectangle, circle, and half circle as shown here:
 
