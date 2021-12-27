@@ -77,8 +77,8 @@ function drawColoredBars() {
   
   for (let i = 0; i < lineCount; i++) {
     drawLine(currentLine);
-    // currentLine.startPoint.x += 50;
-    // currentLine.endPoint.x += 50;
+    currentLine.startPoint.y += 50;
+    currentLine.endPoint.y += 50;
     currentLine.color = colors[i + 1];
   }
 }
@@ -88,6 +88,6 @@ function drawLine(currentLine) {
   ctx.lineWidth = 3;
   ctx.strokeStyle = currentLine.color;
   ctx.moveTo(currentLine.startPoint.x, currentLine.startPoint.y);
-  ctx.lineTo(currentLine.endPoint.x, currentLine.endPoint.y);
+  ctx.lineTo(currentLine.endPoint.x, currentLine.endPoint.y);  
   ctx.stroke();
 }
