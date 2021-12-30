@@ -13,7 +13,7 @@ $(document).ready(function(){
 
 function addStudent(student){
 
-    $(".row").append("<div class='col-4'></div>");
+    $(".row").append("<div class='col-4 d-flex align-self-stretch'></div>");
     
     //Create the new card with its sub elements
     $(".col-4:last").append("<div class='card'></div>");
@@ -22,12 +22,12 @@ function addStudent(student){
     $(".card:last").append("<img class='card-img-top' src='images/sample.svg'/>");
 
     //creating body section with info on student to card
-    $(".card:last").append("<div class='card-body text-center'></div>");
+    $(".card:last").append("<div class='card-body text-center d-flex flex-column'></div>");
 
 
     $(".card-body:last").append(
         `<h5 class='card-title'>${student.fname} ${student.lname}</h5>`, 
         `<p class='card-text'>${student.info}</p>`,
-        `<a class='btn btn-primary'>VIEW PROFILE</a>`
+        `<a class='btn btn-primary mt-auto'>VIEW PROFILE</a>`
         );
 }
