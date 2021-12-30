@@ -34,7 +34,8 @@ function displayStudent(student) {
     "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo sit."
   );
   newCardBody.append(newCardText);
-  newButton = $("<a href='#' class='btn btn-primary'>View Profile</a>");
+  let newButton = $("<a href='#' class='btn btn-primary'>View Profile</a>");
+  newCardBody.append(newButton);
   newCard.hide();
   newCard.fadeIn(200);
 }
