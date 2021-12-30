@@ -46,7 +46,7 @@ Add `click` event handler to the canvas.
 `y = event.clientY - canvas.offsetTop`
 
 
-# Exercise 7 (Advanced):
+# Exercise 8 (Advanced):
 
 Draw on canvas with mouse:
 
