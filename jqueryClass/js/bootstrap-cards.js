@@ -13,7 +13,6 @@ $(document).ready(function(){
 
 function addStudent(student){
 
-    let colDiv = document.createElement("div");
     $(".row").append("<div class='col-4'></div>");
     
     //Create the new card with its sub elements
