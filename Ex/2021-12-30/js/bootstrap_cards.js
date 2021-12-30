@@ -1,10 +1,24 @@
+$(document).ready(function(){
+    $("form").submit(function(event){
+        console.log("form submitted");
+        event.preventDefault();
+        student = {
+            fname: $("#fname").val(),            
+            lname: $("#lname").val(),
+            mail: $("#studentEmail").val    ()
+        };
+        console.log(student);
+        addStudent(student);
+    });
+});
 
-function addStudent(){
+function addStudent(student){
+    console.log("addStudent", student);
     //Find the grid row with querySelectorAll
     let rows = document.querySelectorAll(".row");
     console.log(rows.length);
     //Ignore last row as this is the button row, use the one before it
-    let theRow = rows[rows.length -1];
+    let theRow = rows[rows.length - 1];
     //Get columns of the row before last row
     let columns = theRow.querySelectorAll(".col-4");
     console.log(columns.length);
