@@ -5,7 +5,7 @@ $(document).ready(function(){
         student = {
             fname: $("#fname").val(),            
             lname: $("#lname").val(),
-            mail: $("#studentEmail").val    ()
+            city: $("#city").val()
         };
         console.log(student);
         addStudent(student);
@@ -13,26 +13,29 @@ $(document).ready(function(){
 });
 
 function addStudent(student){
+    
     console.log("addStudent", student);
-    //Find the grid row with querySelectorAll
-    let rows = document.querySelectorAll(".row");
-    console.log(rows.length);
-    //Ignore last row as this is the button row, use the one before it
-    let theRow = rows[rows.length - 1];
-    //Get columns of the row before last row
-    let columns = theRow.querySelectorAll(".col-4");
-    console.log(columns.length);
+    let columns = $(".row:last > .col-4");
+    console.log("columns.length", columns.length);
     //Get cards element in the selected row
-    let cards = theRow.querySelectorAll(".card");
-    console.log(cards.length);    
+    let cards = $(".row:last > * .card");
+    console.log("cards.length", cards.length);    
     //find the first column with no card
     let theCol = columns[cards.length];
+
     //Create the new card with its sub elements
     let newCrad = document.createElement("div");
     newCrad.classList.add("card");
-    let newimage = document.createElement("img");
+    let newimage = document.createElement("img");    
     newimage.src = "images/sample.svg";
     newimage.classList.add("card-img-top");
+    let newHeader = document.createElement("h5");
+    newHeader.innerHTML = student.fname + " " + student.lname;
+    let newParagraph = document.createElement("p");
+    newParagraph.classList.add("card-text");
+    newParagraph.innerHTML = newHeader.innerHTML + " lives in " + student.city;
     newCrad.appendChild(newimage);
+    newCrad.appendChild(newHeader);
+    newCrad.appendChild(newParagraph);
     theCol.appendChild(newCrad);
 }
