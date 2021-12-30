@@ -1,0 +1,21 @@
+.form {
+  &__customer-usage {
+    margin-bottom: 2rem;
+  }
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.accordion {
+  width: 50%;
+  margin: auto;
+}
+
+button:disabled {
+  background-color: lightgray;
+}

@@ -2,9 +2,11 @@ let canvas;
 let ctx;
 let colors = ["#C418E8", "#E84B18", "#18E823"];
 let colorIndex = 0;
+let inputVal;
 
 function initPage() {
   console.log("initPage");
+  inputVal = document.getElementById("lineBars");
   canvas = document.getElementById("myCanvas");
   ctx = canvas.getContext("2d");
   canvas.addEventListener("click", (event) => {
@@ -19,6 +21,14 @@ function initPage() {
     ctx.moveTo(x, y);
     ctx.lineTo(x + 30, y);
     ctx.stroke();
+  });
+
+  document.getElementById("lineBars").addEventListener("input", () => {
+    if (inputVal.value > 0) {
+      drawColoredBars();
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
   });
 }
 
@@ -53,32 +63,32 @@ function drawCircle() {
 }
 
 function drawColoredBars() {
-  let colors = ["yellow", "#472FC2", "orange", "red"];
-  let lineCount = 3;
+  let colors = ["yellow", "#472FC2", "orange", "red", "blue", "green"];
+  let lineCount = inputVal.value ? inputVal.value : 3;
   const drawWidth = 150;
 
   let currentLine = {
-    startPoint: { x: 20, y: 10 },
+    startPoint: { x: 20, y: 0 },
     endPoint: { x: 20, y: 10 + drawWidth },
-    color: colors[0]
+    color: colors[0],
   };
 
   for (let i = 0; i < lineCount; i++) {
     drawLine(currentLine);
-    currentLine.startPoint.x += 50;
-    currentLine.endPoint.x += 50;
+    currentLine.startPoint.x += drawWidth / lineCount;
+    currentLine.endPoint.x += drawWidth / lineCount;
     currentLine.color = colors[i + 1];
   }
 
-  currentLine.startPoint.x = 10;
+  currentLine.startPoint.x = 0;
   currentLine.startPoint.y = 40;
   currentLine.endPoint.x = currentLine.startPoint.x + drawWidth;
   currentLine.endPoint.y = 40;
-  
+
   for (let i = 0; i < lineCount; i++) {
     drawLine(currentLine);
-    // currentLine.startPoint.x += 50;
-    // currentLine.endPoint.x += 50;
+    currentLine.startPoint.y += drawWidth / lineCount;
+    currentLine.endPoint.y += drawWidth / lineCount;
     currentLine.color = colors[i + 1];
   }
 }
