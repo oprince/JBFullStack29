@@ -1,0 +1,33 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  margin-left: 5em;
+}
+.mouseTests {
+  border-color: blue;
+  background-color: cornsilk;
+  height: 10em;
+  width: 30em;
+}
+canvas{  
+  /*width: 98%;
+  height: 85%;*/
+  border: 1px solid #000000;
+}
+div {
+  margin-top: 10px;
+}
+label {
+  font-weight: bold;
+  color: blue;
+}
+p {
+  display: inline-block;
+  font-weight: bold;
+  color: rgb(117, 7, 160);
+}
