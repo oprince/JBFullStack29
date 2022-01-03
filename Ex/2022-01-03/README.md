@@ -13,7 +13,7 @@
 - Test your function with few samples
 
 **Advanced:**
-- Implement strBinarySearch() function for sorted strings array
+- Implement `strBinarySearch()` function for sorted strings array
 - Use [standard JavaScript strings comparison](https://javascript.info/comparison#string-comparison): 
 - Once your `strBinarySearch()` function is tested successfully, change the students list at [Ex 1](#ex-1-linked-list) to be an array of objects, sorted by email.
 - Use the `strBinarySearch()` to find if email of new student already exists.
