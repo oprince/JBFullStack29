@@ -102,6 +102,9 @@ function addStudent(student){
     students.print();
     return true;
 }
+function find(){
+    
+}
 
 function showStudent(student){
 
