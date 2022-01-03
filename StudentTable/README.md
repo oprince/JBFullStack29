@@ -7,7 +7,7 @@ Our team is going to implement a Students table UI. Here are the requirements:
 - **Yarden, Netanel, Tamir:** Form to add\change a student 
 - **Ami, Haim:** Option to delete a student 
 - **Adir, Sabina:** No duplicated students
-- **Daniel, Yuva:** Wrapping page (container for the form and the table)
+- **Daniel, Yuval:** Wrapping page (container for the form and the table)
 - **Ilia, Olga:** Students counting
 
 - Student details : Name, Phone, Address, Birth date, Email, Gender, Unique id
