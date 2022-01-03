@@ -9,12 +9,12 @@
 ## Ex 2: Binary search
 
 - Create a sorted array of numbers
-- Implement binarySearch() function for sorted numbers array
+- Implement `binarySearch()` function for sorted numbers array
 - Test your function with few samples
 
 **Advanced:**
 - Implement strBinarySearch() function for sorted strings array
 - Use [standard JavaScript strings comparison](https://javascript.info/comparison#string-comparison): 
-- Once your `strBinarySearch()` function is tested successfully, change the students list at Ex 1 to be an array of objects, sorted by email.
+- Once your `strBinarySearch()` function is tested successfully, change the students list at [Ex 1](#ex-1-linked-list) to be an array of objects, sorted by email.
 - Use the `strBinarySearch()` to find if email of new student already exists.
 
