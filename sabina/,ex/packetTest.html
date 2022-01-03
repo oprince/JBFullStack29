@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Ex2_solution.css">
+    <script type = "text/javascript" src = "./js/Ex2_solution.js"></script>
+    <title>Student details</title>
+  </head>
+  <body dir="rtl" onload="initiateForm()">
+    <div>
+      <p>בדיקת חבילה </p>
+    </div>    
+    <form onSubmit="return calculatpacket()">
+      <ul>
+         <li>
+           <label for="munite">דקות:</label>
+           <input type="number" min=0 id="munite" name="munite">
+         </li>
+         <li>
+            <label for="place">גיגה:</label>
+            <input type="place" min=0 id="place" name="place">
+          </li>
+          <li>
+            <label for="sms"> SMS:</label>
+            <input type="sms" min=0 id="sms" name="sms">
+          </li>
+        </ul>
+         <div class="calculate">
+            <button type="submit">חישוב</button>               
+          <div class="clearfrom">
+            <button type="clearfrom">נקה טופס</button>          
+          </div>       
+        
+    </form> 
+    <ul>
+        <div class="packet">חבילה א</div> <br>
+        <div class="packet">חבילה ב</div> <br>
+        <div class="packet">חבילה ג</div><br>      
+    </ul>  
+  </body>
+</html>
