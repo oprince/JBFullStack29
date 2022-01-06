@@ -1,1 +1,1 @@
-<h1>I am from Info.txt</h1>
+<h1>This is coming from the server</h1>
