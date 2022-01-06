@@ -6,7 +6,8 @@ class ListNode {
     setNext(next){
         this.next = next;
     }
-    match(node){}    
+    match(node){}  
+    hasStr(searchStr){}
 }
 
 class StudentNode extends ListNode{
@@ -16,6 +17,13 @@ class StudentNode extends ListNode{
     match(student){
         if (student.data.mail == this.data.mail)
             return true;
+        return false;
+    }
+    hasStr(searchStr){
+        let fullName = this.data.fname + " " + this.data.lname;
+        if (searchStr == fullName){
+            return true;
+        }
         return false;
     }
 }
@@ -69,6 +77,16 @@ class LinkedList {
         }
         return null;
     }
+    searchAll(searchStr){
+        let foundNodes = [];
+        let lastNode = this.getFirst();
+        while (lastNode) {
+            if (lastNode.hasStr(searchStr))
+                foundNodes.push(lastNode)
+            lastNode = lastNode.next;
+        }
+        return foundNodes;
+    }
 }
 
 let students = new LinkedList();
@@ -85,7 +103,44 @@ $(document).ready(function(){
         if (addStudent(student))
             showStudent(student);
     });
+    $("#search").click(function(event){
+        event.preventDefault();        
+        let similarStudents = searchStudents($("#searchStr").val())
+    });
 });
+
+
+function binarySearch(sortedArray, key){
+    let start = 0;
+    let end = sortedArray.length - 1;
+    let loop
+    while (start <= end) {
+        console.log()
+        let middle = Math.floor((start + end) / 2);
+
+        if (sortedArray[middle] === key) {
+            // found the key
+            return middle;
+        } else if (sortedArray[middle] < key) {
+            // continue searching to the right
+            start = middle + 1;
+        } else {
+            // search searching to the left
+            end = middle - 1;
+        }
+    }
+	// key wasn't found
+    return -1;
+}
+
+function searchStudents(searchStr){
+    //console.log("searchStudents " + searchStr);
+    //let found = students.searchAll(searchStr);
+    //console.log(found);
+    let sortedArray = [2,3,7,9,100,320,1000,1700,1800,1900,2400,10000];
+    let theResult = binarySearch(sortedArray, 1001);
+    console.log("binarySearch result = " + theResult);
+}
 
 function addStudent(student){
     let newStudentNode = new StudentNode(student);
