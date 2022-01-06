@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet"/>    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/bootstrap-cards_ajax.js"></script>
+</head>
+<body>
+  <h1>Bootstrap cards in a grid</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mt-4">
+        <form action="#" id="studentForm" class="mb-3">
+          <div class="form-group">
+            <label for="fname">First name</label>
+            <input type="input" class="form-control" id="fname" required>
+          </div>
+          <div class="form-group">
+            <label for="lname">Last name</label>
+            <input type="input" class="form-control" id="lname" required>
+          </div>
+          <div class="form-group">
+            <label for="info">Info</label>
+            <input type="input" class="form-control" id="info" required>
+          </div>
+          <div class="form-group mb-1">
+            <label for="studentEmail">Email address</label>
+            <input type="email" class="form-control" id="studentEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted"></small>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="search" class="btn btn-primary">Search</button>
+          <input type="input" class="input-sm" id="searchStr">
+        </form>     
+      </div>
+    </div>
+      <div class="row">
+      </div>
+</body>
+</html>
