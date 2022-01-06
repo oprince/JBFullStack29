@@ -123,6 +123,7 @@ $(document).ready(function () {
             info: $("#info").val(),
             mail: $("#studentEmail").val()
         };
+<<<<<<< Updated upstream
         if (addStudent(student)) {
             ()=>{
                 
@@ -131,6 +132,12 @@ $(document).ready(function () {
         }
 
 
+=======
+        if (addStudent(student)){
+            showStudent(student);
+        }
+            
+>>>>>>> Stashed changes
     });
     $("#search").click(function (event) {
         event.preventDefault();
