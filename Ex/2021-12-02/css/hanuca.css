@@ -1,0 +1,115 @@
+@font-face
+{
+    font-family: trashim;
+    src: url(../fonts/TrashimCLM-Bold.otf);
+}
+h1 {
+    font-family:trashim;
+    font-size: 500%;
+    /* Center */
+    margin: 0 auto;
+    padding: 1em;
+    max-width: fit-content;
+    color: gold;   
+}
+a {
+  color: rgba(0, 238, 255, 0.541);
+}
+body  {
+    background-color: rgb(71, 54, 179);
+}
+
+.candle {
+    position: relative;
+    background-image: url("../images/transparent_candle_small.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 3em;
+    display: inline-block;
+    max-width: fit-content;    
+}
+.candle img{
+    visibility: hidden;
+    object-fit: contain;      
+}
+.candle p{
+  font-family:trashim;
+  position: absolute;
+  left: 30%;
+  top: 50%;
+  max-width: fit-content;
+  color:rebeccapurple;
+}
+.candle-off{
+  background-image:none;
+}
+.shamash{
+  background-position: right top;
+  padding-left: 4em;
+}
+.shamash p{
+  left: 52%;
+  font-size: 150%;
+  color:mediumvioletred;
+}
+.fade-in {
+    animation-name: FadeIn;
+    animation-duration: 2s;
+    transition-timing-function: ease;
+    margin-top: 4em;
+  }
+  
+ @keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-o-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .center{
+    font-family:trashim;
+    font-size: 200%;
+    /* Center */
+    margin: 0 auto;
+    padding: 1em;
+    max-width: fit-content;
+    color: gold;  
+  }
