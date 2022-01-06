@@ -1,0 +1,20 @@
+[
+    {
+        "fname": "Or",
+        "lname": "Rozen",
+        "info": "Taking the John Bryce Full Stack course",
+        "mail": "or@gmail.com"
+    },
+    {
+        "fname": "Tamir",
+        "lname": "Assayag",
+        "info": "Taking the John Bryce Full Stack course",
+        "mail": "tamir@gmail.com"
+    },
+    {
+        "fname": "Leeor Lee",
+        "lname": "Goren",
+        "info": "Taking the John Bryce Full Stack course",
+        "mail": "lior@gmail.com"
+    }
+]
