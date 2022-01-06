@@ -156,20 +156,22 @@ function searchStudents(searchStr){
 }
 
 function addStudent(student){
-    let newStudentNode = new StudentNode(student);
-    let matchStudent = students.search(newStudentNode);
-    if (matchStudent){
-        alert("Duplicated email");
-        return false;
-    }
-    if (students.isEmpty()){
-        students.setFirst(newStudentNode);
-    }else{
-        students.add(newStudentNode);
-    }
-    students.print();
+    $.ajax({
+        type: "POST",
+        url: "/student",
+        data: JSON.stringify(students),
+        contentType: "application/json; charset=utf-8",
+        success: function( data ) {
+            console.log("student was posted");
+        },
+        error: function(errMsg) {
+            console.log(errMsg);
+        }
+    });
     return true;
 }
+
+
 
 function showStudent(student){
 

@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express()
+app.use(express.json());
 const port = 3000
 
 //setting middleware
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 //POST student API
 app.post('/student', (req, res) => {
     console.log("student was posted");
+    console.log(req.body);  
     res.send('student was posted')
   })
   
