@@ -1,27 +1,27 @@
 class ListNode {
     constructor(data) {
         this.data = data
-        this.next = null
+        this.next = null                
     }
-    setNext(next) {
+    setNext(next){
         this.next = next;
     }
-    match(node) { }
-    hasStr(searchStr) { }
+    match(node){}  
+    hasStr(searchStr){}
 }
 
-class StudentNode extends ListNode {
-    constructor(data) {
+class StudentNode extends ListNode{
+    constructor(data){
         super(data);
     }
-    match(student) {
+    match(student){
         if (student.data.mail == this.data.mail)
             return true;
         return false;
     }
-    hasStr(searchStr) {
+    hasStr(searchStr){
         let fullName = this.data.fname + " " + this.data.lname;
-        if (searchStr == fullName) {
+        if (searchStr == fullName){
             return true;
         }
         return false;
@@ -32,10 +32,10 @@ class LinkedList {
     constructor(head = null) {
         this.head = head
     }
-    setFirst(node) {
-        this.head = node;
+    setFirst(node){
+        this.head = node;    
     }
-    isEmpty() {
+    isEmpty(){
         if (this.head == null)
             return true;
         return false;
@@ -52,10 +52,10 @@ class LinkedList {
     getFirst() {
         return this.head;
     }
-    add(node) {
+    add(node){
         this.getLast().setNext(node);
     }
-    print() {
+    print(){
         console.log("Current linked list");
         let lastNode = this.getFirst();
         if (lastNode) {
@@ -66,18 +66,18 @@ class LinkedList {
             }
         }
     }
-    search(node) {
+    search(node){
         let lastNode = this.getFirst();
-        if (lastNode) {
+        if (lastNode) {            
             while (!lastNode.match(node) && lastNode.next) {
                 lastNode = lastNode.next
             }
             if (lastNode.match(node))
-                return lastNode;
+                return lastNode;            
         }
         return null;
     }
-    searchAll(searchStr) {
+    searchAll(searchStr){
         let foundNodes = [];
         let lastNode = this.getFirst();
         while (lastNode) {
@@ -91,67 +91,44 @@ class LinkedList {
 
 let students = new LinkedList();
 
-function loadStudents() {
-    //Get students list from Web server 
-    var xhttp = new XMLHttpRequest();
-    //Define the callback function for the HTTP request
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            //Process Web server reposne
-            studentsJSON = JSON.parse(this.responseText);
-            studentsJSON.forEach(function (student) {
-                //Save student in browser cache
-                addStudent(student);
-                //Show student in HTML page
-                showStudent(student);
-            })
-        }
-    };
-    //Create connection to Web server
-    xhttp.open("GET", "students.json", true);
-    //Send request to Web server
-    xhttp.send();
+function loadStudents(){
+    $.getJSON( "students.json", function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+            //Save student in browser cache
+            //addStudent(val);
+            //Show student in HTML page
+            showStudent(val);
+        });       
+    });
 }
 
-$(document).ready(function () {
+$(document).ready(function(){
     loadStudents();
-    $("form").submit(function (event) {
+    $("form").submit(function(event){
         event.preventDefault();
         let student = {
-            fname: $("#fname").val(),
+            fname: $("#fname").val(),            
             lname: $("#lname").val(),
             info: $("#info").val(),
             mail: $("#studentEmail").val()
         };
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        if (addStudent(student)) {
+        if (addStudent(student)){
             ()=>{
                 
             }
             showStudent(student);
         }
-
-
-=======
-        if (addStudent(student)){
-=======
-        if (addStudent(student))
-
->>>>>>> Stashed changes
-            showStudent(student);
-        }
             
->>>>>>> Stashed changes
     });
-    $("#search").click(function (event) {
-        event.preventDefault();
+    $("#search").click(function(event){
+        event.preventDefault();        
         let similarStudents = searchStudents($("#searchStr").val())
     });
 });
 
 
-function binarySearch(sortedArray, key) {
+function binarySearch(sortedArray, key){
     let start = 0;
     let end = sortedArray.length - 1;
     let loop
@@ -170,43 +147,39 @@ function binarySearch(sortedArray, key) {
             end = middle - 1;
         }
     }
-    // key wasn't found
+	// key wasn't found
     return -1;
 }
 
-function searchStudents(searchStr) {
+function searchStudents(searchStr){
     //console.log("searchStudents " + searchStr);
     //let found = students.searchAll(searchStr);
     //console.log(found);
-    let sortedArray = [2, 3, 7, 9, 100, 320, 1000, 1700, 1800, 1900, 2400, 10000];
+    let sortedArray = [2,3,7,9,100,320,1000,1700,1800,1900,2400,10000];
     let theResult = binarySearch(sortedArray, 1001);
     console.log("binarySearch result = " + theResult);
 }
 
-function addStudent(student) {
+function addStudent(student){
     let newStudentNode = new StudentNode(student);
     let matchStudent = students.search(newStudentNode);
-    if (matchStudent) {
+    if (matchStudent){
         alert("Duplicated email");
         return false;
     }
-    if (students.isEmpty()) {
+    if (students.isEmpty()){
         students.setFirst(newStudentNode);
-    } else {
+    }else{
         students.add(newStudentNode);
     }
-    $.post("students.json", function(data, status){
-        alert("Data: " + student + "\nStatus: " + status);
-      });
-    
     students.print();
     return true;
 }
 
-function showStudent(student) {
+function showStudent(student){
 
     $(".row").append("<div class='col-4 d-flex align-self-stretch'></div>");
-
+    
     //Create the new card with its sub elements
     $(".col-4:last").append("<div class='card w-100'></div>");
 
@@ -218,8 +191,8 @@ function showStudent(student) {
 
 
     $(".card-body:last").append(
-        `<h5 class='card-title'>${student.fname} ${student.lname}</h5>`,
+        `<h5 class='card-title'>${student.fname} ${student.lname}</h5>`, 
         `<p class='card-text'>${student.info}</p>`,
         `<a class='btn btn-primary mt-auto'>VIEW PROFILE</a>`
-    );
+        );
 }
