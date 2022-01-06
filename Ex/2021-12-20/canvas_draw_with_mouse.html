@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/draw_with_mouse.js"></script>
+  </head>
+  <body onload="initPage()">
+  <h1>Draw with mouse on canvas</h1>
+  <br>
+  <div id="catchEventsDiv" class="mouseTests">
+    <canvas id="myCanvas" width="480" height = "160" ></canvas>
+  </div>
+  <div>
+    <button id="cleanCanvas" onclick="cleanCanvas()">Clean canvas</button>
+    <label for="lineType">Line type:</label>
+    <select id="lineType" onchange="showLineFields()">Line type
+      <option value="Straight">Straight</option>
+      <option value="Arc">Arc</option>
+    </select>    
+  </div>
+  </body>
+</html>
