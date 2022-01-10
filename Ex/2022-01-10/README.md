@@ -18,3 +18,11 @@ Enhance the promise sample to toggle between error and success messages:
 Use `Promise.catch()`, and change the execution code of the promise.
 
 
+## Ex 3: Promises with AJAX
+
+Use the sample function `load(url)` described in https://www.javascripttutorial.net/es6/javascript-promises/
+
+Change the openweathermap code sample to use promise with `XMLHttpRequest`
+
+![image](https://user-images.githubusercontent.com/12232897/148816442-7a2945cd-11c5-4938-8321-21a82e05c5fd.png)
+
