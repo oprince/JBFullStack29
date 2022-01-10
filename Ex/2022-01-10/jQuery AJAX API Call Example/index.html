@@ -109,13 +109,14 @@
                 <h4>Select the City for the getting the Weather Report</h4>
                 <select id="citySelect">
                     <option value="Select">Select</option>
-                    <option value="5128581">New York</option>
-                    <option value="5391959">San Francisco</option>
-                    <option value="2643743">London</option>
-                    <option value="1275339">Mumbai</option>
-                    <option value="8199396">Santa Lucia</option>
+                    <option value="294421">Lod</option>
+                    <option value="294492">Kefar Yona</option>
+                    <option value="294498">Kefar Vitqin</option>
+                    <option value="294577">Karmi’el</option>
+                    <option value="294247">Metulla</option>
                 </select>
                 <button id="submit">Submit</button>
+                <button id="submit1">16 days</button>
                 <div class="textAlignCenter">
                     <img src="loading.gif" />
                 </div>
@@ -128,6 +129,7 @@
         $(document).ready(function () {
             $("#reset").click(function (e) {
                 $("#citySelect").val("Select")
+                $("#cnt").val("Select")
                 $("#message").html("")
             });
 
@@ -136,8 +138,8 @@
                 $("#message").html(validate);
                 if (validate.length == 0) {
                     $.ajax({
-                        type: "POST",
-                        url: "http://api.openweathermap.org/data/2.5/weather?id=" + $("#citySelect").val() + "&appid=de6d52c2ebb7b1398526329875a49c57&units=metric",
+                        type: "POST",  
+                        url: "http://api.openweathermap.org/data/2.5/forecast/daily?id=" + $("#citySelect").val() + "&appid=de6d52c2ebb7b1398526329875a49c57&units=metric",
                         dataType: "json",
                         success: function (result, status, xhr) {
                             var table = $("<table><tr><th>Weather Description</th></tr>");
@@ -149,6 +151,23 @@
                             table.append("<tr><td>Weather:</td><td>" + result["weather"][0]["description"] + "</td></tr>");
 
                             $("#message").html(table);
+                        },
+                        error: function (xhr, status, error) {
+                            alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                        }
+                    });
+                }
+            });
+            $("#submit1").click(function (e) {
+                var validate = Validate();
+                $("#message").html(validate);
+                if (validate.length == 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://api.openweathermap.org/data/2.5/forecast/daily?id=" + $("#citySelect").val() + "&appid=de6d52c2ebb7b1398526329875a49c57&cnt=10",
+                        dataType: "json",
+                        success: function (result, status, xhr) {
+                            console.log(result);
                         },
                         error: function (xhr, status, error) {
                             alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
