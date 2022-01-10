@@ -15,21 +15,38 @@ $(document).ready(function () {
       let API_URL = `${BASE_URL}/weather?id=${selectedCity}&appid=${API_KEY}&units=metric`;
       let API_URL_FORECAST = `${BASE_URL}/forecast?id=${selectedCity}&cnt=10&appid=${API_KEY}&units=metric`;
 
-      $.get(API_URL_FORECAST, (data) => {
-        console.log({ forecast: data });
-      }).catch((xhr, status, error) => {
-        alert(
-          `Error: ${error} Status: ${status} Response: ${xhr.responseText}`
-        );
+      return new Promise((resolve, reject) => {
+        // use XMLHttpRequest to get the data from the API
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", API_URL);
+        xhr.onload = function () {
+          if (this.status == 200) {
+            resolve(drawCityWeather(JSON.parse(this.response)));
+          } else {
+            reject(this.statusText);
+          }
+        };
+        xhr.onerror = function () {
+          reject(this.statusText);
+        };
+        xhr.send();
       });
+      //   $.get(API_URL_FORECAST, (data) => {
+      //     console.log({ forecast: data });
+      //   }).catch((xhr, status, error) => {
+      //     alert(
+      //       `Error: ${error} Status: ${status} Response: ${xhr.responseText}`
+      //     );
+      //   });
 
-      $.post(API_URL, (data) => {
-        drawCityWeather(data);
-      }).catch((xhr, status, error) => {
-        alert(
-          `Error: ${error} Status: ${status} Response: ${xhr.responseText}`
-        );
-      });
+      //   $.post(API_URL, (data) => {
+      //     drawCityWeather(data);
+      //   }).catch((xhr, status, error) => {
+      //     alert(
+      //       `Error: ${error} Status: ${status} Response: ${xhr.responseText}`
+      //     );
+      //   });
+      // }
     }
   });
 
