@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenWeatherMap API Call Using jQuery AJAX</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="http://www.yogihosting.com/wp-content/themes/yogi-yogihosting/Images/favicon.ico"
+    />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: #000 no-repeat;
+        background-image: -webkit-gradient(
+          radial,
+          50% 0,
+          150,
+          50% 0,
+          300,
+          from(#444),
+          to(#111)
+        );
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        color: #fff;
+        margin: 5px 0;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 a {
+        font-size: 25px;
+        color: #0184e3;
+        text-decoration: none;
+      }
+
+      h3 {
+        font-size: 23px;
+        border-bottom: solid 3px #ccc;
+        padding-bottom: 10px;
+      }
+
+      h3 a {
+        color: #00e8ff;
+        text-decoration: none;
+      }
+
+      h3 a:hover,
+      h2 a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: 800px;
+        margin: auto;
+        color: #fff;
+        font-size: 25px;
+      }
+
+      .container #content {
+        border: dashed 2px #ccc;
+        padding: 10px;
+      }
+
+      #reset {
+        padding: 5px 10px;
+        background: #4caf50;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      #reset:hover {
+        color: #4caf50;
+        background: #fff;
+      }
+
+      #viewContent {
+        padding-left: 20px;
+      }
+
+      #viewContent select,
+      #viewContent button {
+        color: #000;
+        font-size: 25px;
+      }
+
+      #viewContent h4 {
+        margin: 10px 0;
+      }
+
+      #viewContent .textAlignCenter {
+        text-align: center;
+      }
+
+      #viewContent .textAlignCenter img {
+        display: none;
+        width: 100px;
+      }
+
+      #viewContent #message table {
+        width: 100%;
+      }
+
+      #viewContent #message table th {
+        text-align: left;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>OpenWeatherMap API Call Using jQuery AJAX</h1>
+    <h2>
+      <a href="http://www.yogihosting.com/jquery-ajax-api-call-example/"
+        >Read the tutorial on YogiHosting » </a
+      ><button id="reset">Reset »</button>
+    </h2>
+    <h3>
+      Important Link -
+      <a href="http://www.yogihosting.com/jquery-ajax/">jQuery AJAX</a>
+    </h3>
+    <div class="container">
+      <div id="content">
+        <div id="viewContent">
+          <h4>Select the City for the getting the Weather Report</h4>
+          <select id="citySelect">
+            <option value="Select">Select</option>
+            <option value="8199378">Modiin Ilit</option>
+            <option value="8199379">Nof Ayalon</option>
+            <option value="8199382">Hashmonaim</option>
+            <option value="8199383">Lapid</option>
+            <option value="8199384">Kfar NaOranim</option>
+            <option value="8199385">Mevo horon</option>
+            <option value="8199386">Givat Zeev</option>
+            <option value="8199387">Beit Horon</option>
+            <option value="8199389">Na'ale</option>
+            <option value="8199390">Giv'on HaHadasha</option>
+            <option value="8199392">Talmon</option>
+            <option value="8199393">Dolev</option>
+            <option value="8199394">Ariel</option>
+          </select>
+          <button id="submit">Submit</button>
+          <div class="textAlignCenter">
+            <img src="loading.gif" />
+          </div>
+          <div id="message"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
