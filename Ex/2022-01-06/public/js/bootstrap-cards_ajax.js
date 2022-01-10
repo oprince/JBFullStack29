@@ -1,3 +1,5 @@
+const { fileURLToPath } = require("url");
+
 class ListNode {
     constructor(data) {
         this.data = data
@@ -195,10 +197,18 @@ function addStudent(student) {
     } else {
         students.add(newStudentNode);
     }
+<<<<<<< Updated upstream
     $.post("students.json", function(data, status){
         alert("Data: " + student + "\nStatus: " + status);
       });
     
+=======
+    $.post("/student", function (data, status) {
+        let arr = fileURLToPath("students.json")
+        console.log(object);
+        console.log("Data: " + data + "\nStatus: " + status);
+    });
+>>>>>>> Stashed changes
     students.print();
     return true;
 }
