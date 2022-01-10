@@ -92,25 +92,15 @@ class LinkedList {
 let students = new LinkedList();
 
 function loadStudents(){
-    //Get students list from Web server 
-    var xhttp = new XMLHttpRequest();
-    //Define the callback function for the HTTP request
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        //Process Web server reposne
-        studentsJSON = JSON.parse(this.responseText);        
-        studentsJSON.forEach(function(student) {
+    $.getJSON( "students.json", function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
             //Save student in browser cache
-            addStudent(student);
+            //addStudent(val);
             //Show student in HTML page
-            showStudent(student);
-        })
-      }
-    };
-    //Create connection to Web server
-    xhttp.open("GET", "students.json");
-    //Send request to Web server
-    xhttp.send();
+            showStudent(val);
+        });       
+    });
 }
 
 $(document).ready(function(){
@@ -178,6 +168,20 @@ function addStudent(student){
         students.add(newStudentNode);
     }
     students.print();
+
+    $.ajax({
+        type: "POST",
+        url: "/student",
+        data: JSON.stringify(student),
+        contentType: "application/json; charset=utf-8",
+        success: function( data ) {
+            console.log("student was posted");
+        },
+        error: function(errMsg) {
+            console.log(errMsg);
+        }
+    });
+
     return true;
 }
 
