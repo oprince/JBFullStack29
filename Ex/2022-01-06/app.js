@@ -16,10 +16,11 @@ app.get('/', (req, res) => {
 //POST student API
 app.post('/student', (req, res) => {
     console.log("student was posted");
-    console.log(req.body);  
-    res.send('student was posted')
-  })
+    console.log(req.body);    
+    res.send('Student was posted\n ' + JSON.stringify(req.body)) 
+})
   
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port} serving static content from folder ${staticFolder}`)
 });

@@ -108,7 +108,7 @@ function loadStudents(){
       }
     };
     //Create connection to Web server
-    xhttp.open("GET", "students.json", true);
+    xhttp.open("GET", "students.json");
     //Send request to Web server
     xhttp.send();
 }

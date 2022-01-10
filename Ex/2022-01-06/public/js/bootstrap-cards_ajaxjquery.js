@@ -159,10 +159,10 @@ function addStudent(student){
     $.ajax({
         type: "POST",
         url: "/student",
-        data: JSON.stringify(students),
+        data: JSON.stringify(student),
         contentType: "application/json; charset=utf-8",
         success: function( data ) {
-            console.log("student was posted");
+            alert(data);
         },
         error: function(errMsg) {
             console.log(errMsg);
@@ -171,12 +171,10 @@ function addStudent(student){
     return true;
 }
 
-
-
 function showStudent(student){
 
     $(".row").append("<div class='col-4 d-flex align-self-stretch'></div>");
-
+    
     //Create the new card with its sub elements
     $(".col-4:last").append("<div class='card w-100'></div>");
 
