@@ -1,6 +1,6 @@
 # JBFullStack29
 
-# JavaScript
+# TypeScript
 
 ## Ex 1: translate JavaScript to TypeScript
 
