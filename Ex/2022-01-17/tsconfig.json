@@ -4,7 +4,5 @@
     "module": "commonjs",
     "outDir": "js"
   },
-  "include": ["ts/*"],
-  "strict": false,
-  "strictPropertyInitialization": true
+  "include": ["ts/*"]
 }
