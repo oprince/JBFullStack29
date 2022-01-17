@@ -37,6 +37,7 @@ function initPage() {
     let sizeGap = (maxWidth - minWidth) / rectsCount;
     for (let i = 0; i < rectsCount; i++) {
         rectangles.push(new FilledRectangle(startX + (i * sizeGap) / 2, startY + (i * sizeGap) / 2, maxWidth - i * sizeGap, maxWidth - i * sizeGap, colors[i]));
+        console.log(rectangles);
     }
 }
 function drawRects() {

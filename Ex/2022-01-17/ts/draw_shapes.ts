@@ -1,4 +1,4 @@
-let rectangles = [];
+let rectangles: FilledRectangle[] = [];
 
 type rectType = {};
 
@@ -48,7 +48,7 @@ class FilledRectangle extends Rectangle {
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 }
-function initPage() {
+function initPage(): void {
   console.log("initPage");
   let colors = ["#184CE8", "#1FD1C5", "#A9B3D8", "#3C4874"];
   let rectsCount: number = 3;
@@ -70,8 +70,8 @@ function initPage() {
   }
 }
 
-function drawRects() {
-  let queue = true;
+function drawRects(): void {
+  let queue: boolean = true;
   if (queue) {
     //Draw queue order
     while (rectangles.length > 0) {
