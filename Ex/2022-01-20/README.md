@@ -4,7 +4,7 @@
 
 ## Ex 1: Interfaces
 
-- Change the prior excersize to use the following interface
+- Change the [prior excersize](https://github.com/oprince/JBFullStack29/tree/master/Ex/2022-01-17#ex-1-translate-javascript-to-typescript) to use the following interface
 ```
 interface Drawable {
     canvas: HTMLCanvasElement;    
