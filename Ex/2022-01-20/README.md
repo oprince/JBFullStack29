@@ -5,13 +5,13 @@
 ## Ex 1: Interfaces
 
 - Change the prior excersize to use the following interface
-`
+```
 interface Drawable {
-    canvas: HTMLCanvasElement;
-    ctx: CanvasRenderingContext2D;    
-    draw():void;
+    canvas: HTMLCanvasElement;    
+    ctx: CanvasRenderingContext2D;        
+    draw():void;    
 }
-`
+```
 
 ## Ex 2: Generics
 
