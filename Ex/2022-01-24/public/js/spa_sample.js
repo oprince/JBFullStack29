@@ -1,4 +1,7 @@
 import Home from "../views/Home.js";
+import Location from "../views/Location.js";
+import About from "../views/About.js";
+
 
 const navigateTo = url => {
     history.pushState(null,null,url);
@@ -8,8 +11,8 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         {path: "/", view: Home},
-        //{path: "/locations", view: () => console.log("Locations")},
-        //{path: "/about", view: () => console.log("About")}
+        {path: "/locations", view: Location},
+        {path: "/about", view: About}
     ];
 
     const currRoutes = routes.map(route => {
