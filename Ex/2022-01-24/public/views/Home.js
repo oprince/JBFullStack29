@@ -31,7 +31,7 @@ export default class extends AbstractView {
         type: "POST",
         url: `http://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=de6d52c2ebb7b1398526329875a49c57&units=metric`,
         dataType: "json",
-        success: function (result, status, xhr) {
+        success: (result, status, xhr) => {
           const { name, sys, main, weather } = result;
           let table = $("<table><tr><th>Weather Description</th></tr>");
           table.append(`<tr><td>City:</td><td>${name}</td></tr>`);
@@ -45,7 +45,7 @@ export default class extends AbstractView {
           );
           $("#message").html(table);
         },
-        error: function (xhr, status, error) {
+        error: (xhr, status, error) => {
           alert(
             "Result: " +
               status +
