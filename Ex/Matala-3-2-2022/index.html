@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.js"></script>
+    <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Countries</title>
+  </head>
+  <body>
+    <header>
+      <div class="flex justify-between items-center p-3 px-10">
+        <div class="flex">
+          <a href="">
+            <img src="./assets/images/globe-svgrepo-com.svg" width="60px" />
+          </a>
+        </div>
+        <section></section>
+        <form>
+          <div class="shadow sm:rounded-md sm:overflow-hidden">
+            <div class="col-span-3 sm:col-span-2 flex items-center gap-5">
+              <div class="mt-1 flex rounded-md shadow-sm">
+                <span
+                  class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm"
+                >
+                  Search
+                </span>
+                <input
+                  type="text"
+                  name="country"
+                  id="search-country"
+                  class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"
+                  placeholder="Country"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <section
+      id="app"
+      class="flex flex-col gap-4 items-center antialiased bg-gray-100 text-gray-600 p-4"
+    >
+      <button
+        id="all-countries"
+        class="bg-transparent hover:bg-green-500 text-black-700 font-semibold hover:text-white py-2 px-4 border border-grey-500 hover:border-transparent rounded"
+      >
+        Show all countries
+      </button>
+      <div class="population-info"></div>
+      <div class="h-full">
+        <!-- Table -->
+        <div
+          class="max-w-4xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+        >
+          <header class="table-header px-5 py-4 border-b border-gray-100">
+            <h2 class="font-semibold text-gray-800">Countries</h2>
+          </header>
+          <div class="p-3">
+            <div class="overflow-x-auto">
+              <table class="table-auto w-full">
+                <thead
+                  class="text-xs font-semibold uppercase text-gray-400 bg-gray-50"
+                >
+                  <tr>
+                    <th class="p-2 whitespace-nowrap">
+                      <div class="font-semibold text-left">Country Name</div>
+                    </th>
+                    <th class="p-2 whitespace-nowrap">
+                      <div class="font-semibold text-left">
+                        Number Of Citizens
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="text-sm divide-y divide-gray-100 t-body-countries"
+                ></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-full regions">
+        <!-- Table -->
+        <div
+          class="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+        >
+          <header class="px-5 py-4 border-b border-gray-100">
+            <h2 class="font-semibold text-gray-800">Regions</h2>
+          </header>
+          <div class="p-3">
+            <div class="overflow-x-auto">
+              <table class="table-auto w-full">
+                <thead
+                  class="text-xs font-semibold uppercase text-gray-400 bg-gray-50"
+                >
+                  <tr>
+                    <th class="p-2 whitespace-nowrap">
+                      <div class="font-semibold text-left">Region Name</div>
+                    </th>
+                    <th class="p-2 whitespace-nowrap">
+                      <div class="font-semibold text-left">
+                        Number of countries
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+
+                <tbody
+                  class="text-sm divide-y divide-gray-100 t-body-regions"
+                ></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="flex items-center justify-center">
+      <p class="text-gray-800">
+        Coded by Tamir Assayag for John Bryce assignment
+      </p>
+    </footer>
+    <script src="./index.js"></script>
+    <script src="lodash.js"></script>
+  </body>
+</html>
